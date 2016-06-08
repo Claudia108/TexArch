@@ -3,7 +3,11 @@ class SessionsController < ApplicationController
     if user = User.from_omniauth(request.env["omniauth.auth"])
       session[:user_id] = user.id
     end
-    redirect_to root_path
+    if current_user.admin?
+      redirect_to admin_dashboard_path
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy

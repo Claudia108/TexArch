@@ -57,4 +57,5 @@ group :test do
   gem 'minitest-vcr'
   gem 'simplecov', :require => false
   gem 'mocha'
+  gem 'database_cleaner'
 end

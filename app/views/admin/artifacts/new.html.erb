@@ -1,0 +1,24 @@
+<h1>Add a new Artifact</h1>
+
+<%= form_for [:admin, @artifact] do |f| %>
+  <%= f.label :ui %>
+  <%= f.text_field :ui %>
+
+  <%= f.label :point_type %>
+  <%= f.text_field :point_type %>
+
+  <%= f.label :max_thickness %>
+  <%= f.text_field :max_thickness %>
+
+  <%= f.label :max_length %>
+  <%= f.text_field :max_length %>
+
+  <%= f.label :max_width %>
+  <%= f.text_field :max_width %>
+
+  <%= f.label :basal_edge_width %>
+  <%= f.text_field :basal_edge_width %>
+
+  <%= f.collection_select :site_id, Site.all, :id, :name, { prompt: "Choose the Site" }, class: "browser-default" %>
+  <%= f.submit "Add this Artifact" %>
+<% end %>

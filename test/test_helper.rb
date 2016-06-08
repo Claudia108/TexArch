@@ -11,6 +11,7 @@ require "vcr"
 require "webmock"
 require "minitest-vcr"
 require "mocha/mini_test"
+require 'database_cleaner'
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
@@ -29,10 +30,33 @@ class ActiveSupport::TestCase
     })
   end
 
+  def login_user(user)
+    stub_omniauth
+    visit '/'
+    click_link("Sign in with Google")
+
+  end
+
+  def admin_login
+    User.from_omniauth(stub_omniauth)
+    user = User.find_by(uid: "15485124")
+    user.admin!
+    visit '/'
+    within(".navbar-right") do
+      click_link("Sign in with Google")
+    end
+    assert_equal '/admin/dashboard', current_path
+    user
+  end
+
 
   # Add more helper methods to be used by all tests here...
 end
 
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
+
+  DatabaseCleaner.strategy = :truncation
+  DatabaseCleaner.clean
+# then, whenever you need to clean the DB
 end
