@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ui: 1
+  point_type: MyString
+  max_thickness: 1
+  max_length: 1
+  max_width: 1
+  basal_edge_width: 1
+  site_id: 
+
+two:
+  ui: 1
+  point_type: MyString
+  max_thickness: 1
+  max_length: 1
+  max_width: 1
+  basal_edge_width: 1
+  site_id: 

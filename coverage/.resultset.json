@@ -1,0 +1,97 @@
+{
+  "MiniTest": {
+    "coverage": {
+      "/Users/claudia/Turing/3module/projects/TexArch/app/models/user.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/claudia/Turing/3module/projects/TexArch/app/controllers/home_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/claudia/Turing/3module/projects/TexArch/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        7,
+        null,
+        null
+      ],
+      "/Users/claudia/Turing/3module/projects/TexArch/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/claudia/Turing/3module/projects/TexArch/app/helpers/images_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/claudia/Turing/3module/projects/TexArch/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        2,
+        2,
+        null,
+        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/claudia/Turing/3module/projects/TexArch/app/controllers/images_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/claudia/Turing/3module/projects/TexArch/app/models/image.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1465402478
+  }
+}
