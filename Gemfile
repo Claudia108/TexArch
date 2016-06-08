@@ -24,6 +24,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "omniauth-google-oauth2"
 
 gem 'nokogiri', '~> 1.6.7.2'
+gem "paperclip", "~> 5.0.0.beta1"
+gem 'aws-sdk', '>= 2.0.34'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
