@@ -1,0 +1,8 @@
+<h1>Welcome!</h1>
+  <%= link_to "Sign in with Google", google_login_path %>
+  <% if current_user %>
+  <p>
+    Welcome <%= current_user.first_name %>
+    <%= link_to "Logout", logout_path, method: :delete %>
+  </p>
+  <% end %>
