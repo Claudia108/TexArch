@@ -24,6 +24,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "omniauth-google-oauth2"
 
 gem 'nokogiri', '~> 1.6.7.2'
+gem "paperclip", "~> 5.0.0.beta1"
+gem 'aws-sdk', '>= 2.0.34'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -39,12 +41,12 @@ group :development, :test do
   gem 'byebug'
   gem 'capybara'
   gem "pry", :require => "pry"
+  gem 'launchy'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  gem 'rails_12factor'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
@@ -55,4 +57,9 @@ group :test do
   gem 'minitest-vcr'
   gem 'simplecov', :require => false
   gem 'mocha'
+  gem 'database_cleaner'
+end
+
+group :production do
+  gem 'rails_12factor'
 end

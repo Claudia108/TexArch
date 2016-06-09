@@ -1,0 +1,48 @@
+<h1>Add a new Artifact</h1>
+
+<div class= col-md-8">
+
+  <%= form_for [:admin, @artifact], url: "/admin/artifacts" do |f| %>
+
+    <fieldset class="form-group col-md-4">
+      <%= f.label :ui %>
+      <%= f.text_field :ui, class: "form-control number" %>
+    </fieldset>
+
+    <fieldset class="form-group col-md-4">
+      <%= f.label :point_type %>
+      <%= f.text_field :point_type, class: "form-control text" %>
+    </fieldset>
+
+    <fieldset class="form-group col-md-4">
+      <%= f.label :max_thickness %>
+      <%= f.text_field :max_thickness, class: "form-control", placeholder: "Input as integer" %>
+    </fieldset>
+
+    <fieldset class="form-group col-md-4">
+      <%= f.label :max_length %>
+      <%= f.text_field :max_length, class: "form-control", placeholder: "Input as integer" %>
+    </fieldset>
+
+    <fieldset class="form-group col-md-4">
+      <%= f.label :max_width %>
+      <%= f.text_field :max_width, class: "form-control number", placeholder: "Input as integer" %>
+    </fieldset>
+
+    <fieldset class="form-group col-md-4">
+      <%= f.label :basal_edge_width %>
+      <%= f.text_field :basal_edge_width, class: "form-control", placeholder: "Input as integer" %>
+    </fieldset>
+
+    <fieldset class="form-group col-md-4">
+      <%= f.collection_select :site_id, Site.all, :id, :name, { prompt: "Choose the Site" }, class: "c-select" %>
+    </fieldset>
+
+    <fieldset class="form-group col-md-4">
+      <%= f.file_field :image, class: "form-control-file"%>
+    </fieldset>
+    <fieldset class="form-group col-md-4">
+      <%= f.submit "Add this Artifact", class: "btn btn-primary" %>
+    </fieldset>
+    <% end %>
+</div>
