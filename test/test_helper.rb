@@ -56,7 +56,9 @@ end
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
 
-  DatabaseCleaner.strategy = :truncation
-  DatabaseCleaner.clean
+  def teardown
+    Capybara.reset_sessions!
+    Capybara.use_default_driver
+  end
 # then, whenever you need to clean the DB
 end

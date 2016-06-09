@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160609041525) do
+ActiveRecord::Schema.define(version: 20160609145851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,22 +24,15 @@ ActiveRecord::Schema.define(version: 20160609041525) do
     t.integer  "max_width"
     t.integer  "basal_edge_width"
     t.integer  "site_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "artifacts", ["site_id"], name: "index_artifacts_on_site_id", using: :btree
-
-  create_table "images", force: :cascade do |t|
-    t.string   "title"
-    t.string   "artifact_file_name"
-    t.string   "artifact_content_type"
-    t.integer  "artifact_file_size"
-    t.datetime "artifact_updated_at"
-    t.integer  "artifact_id"
-  end
-
-  add_index "images", ["artifact_id"], name: "index_images_on_artifact_id", using: :btree
 
   create_table "sites", force: :cascade do |t|
     t.string   "longitude"
@@ -61,5 +54,4 @@ ActiveRecord::Schema.define(version: 20160609041525) do
   end
 
   add_foreign_key "artifacts", "sites"
-  add_foreign_key "images", "artifacts"
 end

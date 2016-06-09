@@ -1,19 +1,35 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  ui: 1
-  point_type: MyString
-  max_thickness: 1
-  max_length: 1
-  max_width: 1
-  basal_edge_width: 1
-  site_id: 
+  ui: 1456
+  point_type: Bell
+  max_thickness: 345
+  max_length: 1003
+  max_width: 432
+  basal_edge_width: 203
+  site: one
+  # image: /app/assets/images/andice.jpg
+  # image_file_name: "andice.jpg"
+  # image_content_type: "image/jpeg"
+  # image_file_size: 52397
+  # image_updated_at: "2016-06-08 01:19:31"
+
 
 two:
-  ui: 1
-  point_type: MyString
-  max_thickness: 1
-  max_length: 1
-  max_width: 1
-  basal_edge_width: 1
-  site_id: 
+  ui: 8766
+  point_type: Andice
+  max_thickness: 98
+  max_length: 960
+  max_width: 11
+  basal_edge_width: 123
+  site: one
+
+
+three:
+  ui: 9123
+  point_type: Calf Creek
+  max_thickness: 113
+  max_length: 7543
+  max_width: 623
+  basal_edge_width: 43
+  site: two

@@ -1,6 +1,6 @@
 <h1>Add a new Artifact</h1>
 
-<%= form_for [:admin, @artifact] do |f| %>
+<%= form_for [:admin, @artifact], html: { multipart: true } do |f| %>
   <%= f.label :ui %>
   <%= f.text_field :ui %>
 
@@ -20,5 +20,6 @@
   <%= f.text_field :basal_edge_width %>
 
   <%= f.collection_select :site_id, Site.all, :id, :name, { prompt: "Choose the Site" }, class: "browser-default" %>
+  <%= f.file_field :image %>
   <%= f.submit "Add this Artifact" %>
 <% end %>

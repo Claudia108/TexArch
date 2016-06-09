@@ -5,6 +5,8 @@
         1,
         1,
         1,
+        1,
+        null,
         null
       ],
       "/Users/claudia/Turing/3module/projects/TexArch/app/models/site.rb": [
@@ -131,44 +133,9 @@
         1,
         1,
         null,
-        null,
         null
-      ],
-      "/Users/claudia/Turing/3module/projects/TexArch/app/controllers/images_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/claudia/Turing/3module/projects/TexArch/app/models/image.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
       ]
     },
-    "timestamp": 1465448217
+    "timestamp": 1465494604
   }
 }
