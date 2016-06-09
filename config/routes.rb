@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :artifacts, only: [:index, :show]
+  get '/map', to: 'map#show', as: :map_path
 
   get '/auth/google_oauth2', as: :google_login
   get '/auth/google_oauth2/callback', to: 'sessions#create'
