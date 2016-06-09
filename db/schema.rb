@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20160609145851) do
   create_table "sites", force: :cascade do |t|
     t.string   "longitude"
     t.string   "latitude"
-    t.string   "name"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "site_type",  default: 0

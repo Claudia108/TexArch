@@ -15,13 +15,7 @@ class Admin::ArtifactsController < Admin::BaseController
     end
   end
 
-  def edit
 
-  end
-
-  def destroy
-
-  end
 
   private
 

@@ -17,5 +17,6 @@
 
 /public/assets
 /test/cassettes
+/coverage
 
 .byebug_history

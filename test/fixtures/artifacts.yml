@@ -8,12 +8,6 @@ one:
   max_width: 432
   basal_edge_width: 203
   site: one
-  # image: /app/assets/images/andice.jpg
-  # image_file_name: "andice.jpg"
-  # image_content_type: "image/jpeg"
-  # image_file_size: 52397
-  # image_updated_at: "2016-06-08 01:19:31"
-
 
 two:
   ui: 8766

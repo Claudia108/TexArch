@@ -3,11 +3,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/dashboard', to: 'users#show'
-    # resources :images, only: [:new, :create]
     resources :artifacts, only: [:new, :create]
   end
 
-  # resources :images, only: [:index, :show]
   resources :artifacts, only: [:index, :show]
 
   get '/auth/google_oauth2', as: :google_login
