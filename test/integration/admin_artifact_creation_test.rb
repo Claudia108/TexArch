@@ -28,7 +28,8 @@ class AdminArtifactCreationTest < ActionDispatch::IntegrationTest
     click_button("Add this Artifact")
 
     assert_equal artifact_path(Artifact.last.id), current_path
-    assert page.has_content?("Artifact Point Type: Bell")
+    assert page.has_content?("Point Type")
+    assert page.has_content?("Bell")
     assert page.has_css?("img[src*='andice.jpg']")
   end
 

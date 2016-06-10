@@ -1,4 +1,48 @@
 
-<h1>Artifact</h1>
-<p>Artifact Point Type: <%= @artifact.point_type %></p>
-<div class="image-show"><%= image_tag @artifact.image.url(:medium), alt: "Tag Image", class: "task-image" %></div>
+<h2>Artifact <%= @artifact.id %></h2>
+
+<div class="row">
+  <div class="image-fluid img-rounded col-md-6">
+    <%= image_tag @artifact.image.url(:medium), alt: "Artifact Image", class: "img-rounded", id:"artifact-mage" %>
+  </div>
+  <div class="col-md-6">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Artifact Attributes</th>
+          <th>Measurements - in mm</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>UI</td>
+          <td> <%= @artifact.ui %></td>
+        </tr>
+        <tr>
+          <td>Point Type</td>
+          <td> <%= @artifact.point_type %></td>
+        </tr>
+        <tr>
+          <td>Maximum Length</td>
+          <td> <%= @artifact.max_length %></td>
+        </tr>
+        <tr>
+          <td>Maximum Width</td>
+          <td> <%= @artifact.max_width %></td>
+        </tr>
+        <tr>
+          <td>Maximum Thickness</td>
+          <td> <%= @artifact.max_thickness %></td>
+        </tr>
+        <tr>
+          <td>Basal Edge Width</td>
+          <td> <%= @artifact.basal_edge_width %></td>
+        </tr>
+        <tr>
+          <td>Site found</td>
+          <td> <%= @artifact.site.name %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -19,10 +19,39 @@ $main-light-color: white;
 
 * {
   color: black;
-  font-weight: 100;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+h1 {
+  margin-top: 0px;
+}
+
+h2 {
+  margin-top: 10px;
+  font-size: 40px;
 }
 
 .jumbotron {
+  padding-top: 34px;
+  padding-bottom: 48px;
   margin-bottom: 0px;
+  height: 120px;
   color: $main-dark-color
+}
+
+.row {
+  margin-top: 35px;
+}
+
+.input-form {
+  padding-top: 20px;
+}
+
+.radio-button-line {
+  padding-top: 30px;
+}
+
+#artifact-image {
+  padding-top: 20px;
 }
