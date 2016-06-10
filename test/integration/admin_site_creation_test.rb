@@ -18,13 +18,14 @@ class AdminSiteCreationTest < ActionDispatch::IntegrationTest
     fill_in "site[name]", with: "Denver Site"
     fill_in "site[longitude]", with: "-104.991531"
     fill_in "site[latitude]", with: "39.742043"
-    choose("Public Site")
+    find(:css, "#radio1").set(true)
 
     click_button("Add this Site")
 
     assert_equal admin_site_path(Site.last.id), current_path
     assert page.has_content?("Site Name")
     assert page.has_content?("Denver Site")
+    assert page.has_content?("public_site")
   end
 
 end

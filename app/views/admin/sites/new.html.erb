@@ -21,12 +21,12 @@
         <%= f.text_field :latitude, class: "form-control", placeholder: "Input as decimal" %>
       </fieldset>
 
-      <div class="c-input c-radio col-md-3 radio-button-line">
+      <div class="c-input c-radio col-md-3 radio-button-line" id="radio1">
         <%= radio_button_tag(:site_type, "public_site") %>
         <%= label_tag(:public_site, "Public Site")  %>
       </div>
 
-      <div class="c-input c-radio col-md-3 radio-button-line">
+      <div class="c-input c-radio col-md-3 radio-button-line" id="radio2">
         <%= radio_button_tag(:site_type, "private_site") %>
         <%= label_tag(:private_site, "Private Site") %>
       </div>
