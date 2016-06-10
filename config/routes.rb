@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   root 'home#index'
 
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :sites, only: [:index]
+    end
+  end
+
   namespace :admin do
     get '/dashboard', to: 'users#show'
     resources :artifacts, only: [:new, :create]
