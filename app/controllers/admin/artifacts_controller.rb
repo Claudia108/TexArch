@@ -15,6 +15,10 @@ class Admin::ArtifactsController < Admin::BaseController
     end
   end
 
+  def show
+    @artifact.find(params[:id])
+  end
+
 
 
   private
