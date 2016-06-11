@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    get '/dashboard', to: 'users#show'
-    resources :artifacts, only: [:new, :create, :show]
-    resources :sites, only: [:new, :create, :show]
+    get '/dashboard', to: 'users#show', as: :dashboard
+    resources :artifacts
+    resources :sites
   end
 
   resources :artifacts, only: [:index, :show]

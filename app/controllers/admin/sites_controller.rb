@@ -14,6 +14,10 @@ class Admin::SitesController < Admin::BaseController
       render :new
     end
 
+    def index
+      @sites = Site.all
+    end
+
     def show
       @site = Site.find(params[:id])
     end
