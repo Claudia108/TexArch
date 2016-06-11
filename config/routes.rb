@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :artifacts, only: [:index, :show]
   get '/map', to: 'map#show', as: :map_path
-
+  get '/calfcreek_horizon', to: 'home#show', as: :cch
   get '/auth/google_oauth2', as: :google_login
   get '/auth/google_oauth2/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: :logout
