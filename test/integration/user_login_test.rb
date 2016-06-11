@@ -27,4 +27,8 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     refute page.has_content?("Logout")
     assert page.has_content?("Sign in with Google")
   end
+
+  test "user can view map, artifacts and sites" do
+    user = User.first
+  end
 end

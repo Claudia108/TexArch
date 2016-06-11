@@ -40,9 +40,10 @@ class Admin::SitesController < Admin::BaseController
 
   def destroy
     site = Site.find(params[:id])
+    Artifact.where(site_id: site.id).update_all(site_id: nil)
     site.destroy
-    flash[:notice] = "Site Deleted!"
-    redirect_to admin_sitess_path
+    flash[:notice] = "Site and its Reference in Artifacts Deleted!"
+    redirect_to admin_sites_path
   end
 
   private
