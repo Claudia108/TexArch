@@ -1,0 +1,39 @@
+<h2>Add a new Site</h2>
+
+<div class="row input-form">
+
+  <div class= "col-md-8">
+
+    <%= form_for [:admin, @site] do |f| %>
+
+      <fieldset class="form-group col-md-6">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control number" %>
+      </fieldset>
+
+      <fieldset class="form-group col-md-6">
+        <%= f.label :longitude %>
+        <%= f.text_field :longitude, class: "form-control text", placeholder: "Input as decimal" %>
+      </fieldset>
+
+      <fieldset class="form-group col-md-6">
+        <%= f.label :latitude %>
+        <%= f.text_field :latitude, class: "form-control", placeholder: "Input as decimal" %>
+      </fieldset>
+
+      <div class="c-input c-radio col-md-3 radio-button-line" id="radio1">
+        <%= radio_button_tag(:site_type, "public_site") %>
+        <%= label_tag(:public_site, "Public Site")  %>
+      </div>
+
+      <div class="c-input c-radio col-md-3 radio-button-line" id="radio2">
+        <%= radio_button_tag(:site_type, "private_site") %>
+        <%= label_tag(:private_site, "Private Site") %>
+      </div>
+
+      <fieldset class="form-group col-md-8">
+        <%= f.submit "Update Site", class: "btn btn-primary" %>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

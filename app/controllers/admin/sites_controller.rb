@@ -13,14 +13,36 @@ class Admin::SitesController < Admin::BaseController
       flash[:notice] = "Invalid! Try Again"
       render :new
     end
+  end
 
-    def index
-      @sites = Site.all
-    end
+  def index
+    @sites = Site.all
+  end
 
-    def show
-      @site = Site.find(params[:id])
+  def show
+    @site = Site.find(params[:id])
+  end
+
+  def edit
+    @site = Site.find(params[:id])
+  end
+
+  def update
+    @site = Site.find(params[:id])
+    if @site.update_attributes(site_params)
+      flash[:notice] = "Site Updated!"
+      redirect_to admin_site_path(@site.id)
+    else
+      flash[:notice] = "Invalid! Try Again"
+      render :edit
     end
+  end
+
+  def destroy
+    site = Site.find(params[:id])
+    site.destroy
+    flash[:notice] = "Site Deleted!"
+    redirect_to admin_sitess_path
   end
 
   private
