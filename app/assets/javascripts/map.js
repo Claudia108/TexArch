@@ -1,7 +1,5 @@
 $(document).ready(function() {
-  if('#map'){
     renderMap();
-  }
 });
 
 function renderMap() {
@@ -17,7 +15,6 @@ function renderMap() {
 
 var initMap = function(response) {
   var centerPoint = {lat: 39.50, lng: -98.35};
-
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
     center: centerPoint,
@@ -39,7 +36,7 @@ var initMap = function(response) {
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">' + site.name +'</h1>'+
             '<div id="bodyContent">'+
-            '<p><b>The' + site.name + '</b>: ' + site.name + '</p>'+
+            // '<p><b>The' + site.name + '</b>: ' + site.name + '</p>'+
             '<p>Information: <a href="http://www.gaultschool.org/Home.aspx", target="_blank">' +
             'http://www.gaultschool.org/Home.aspx' +
             '</a></p>'+
