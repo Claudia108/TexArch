@@ -37,7 +37,7 @@ class ActiveSupport::TestCase
     within(".navbar-right") do
       click_link("Sign in with Google")
     end
-    assert_equal '/admin/dashboard', current_path
+    assert_equal '/', current_path
     user
   end
 

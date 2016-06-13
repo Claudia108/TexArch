@@ -17,7 +17,6 @@
     <% if current_user && current_user.admin? %>
     <%= render partial: "shared/admin_navbar" %>
     <% elsif current_user %>
-    <% binding.pry %>
     <%= render partial: "shared/user_navbar" %>
     <% else %>
     <!-- Collect the nav links, forms, and other content for toggling -->

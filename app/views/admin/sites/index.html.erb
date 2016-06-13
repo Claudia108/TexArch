@@ -2,3 +2,5 @@
 <% @sites.each do |site| %>
   <p><%= link_to site.name, admin_site_path(site) %></p>
 <% end %>
+
+<p><%= link_to "Add a new Site", new_admin_site_path, class: "btn btn-primary" %></p>
