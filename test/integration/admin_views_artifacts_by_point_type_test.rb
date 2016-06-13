@@ -48,7 +48,7 @@ class AdminViewsArtifactsByPointTypeTest < ActionDispatch::IntegrationTest
     end
 
     assert_equal calf_creek_path, current_path
-    assert page.has_content?("Artifact Point Type: Calf Creek")
+    assert page.has_content?("All Calf Creek Points")
     assert_equal 2, calf_creek.count
     refute page.has_content?("Artifact Point Type: Andice")
     refute page.has_content?("Artifact Point Type: Bell")
