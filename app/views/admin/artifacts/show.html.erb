@@ -1,5 +1,4 @@
+<%= render partial: "shared/artifact_show" %>
 
-<h1>Artifact</h1>
-<p>Artifact Point Type: <%= @artifact.point_type %></p>
-
-<div class="image-show"><%= image_tag @artifact.image.url(:medium), alt: "Tag Image", class: "artifact-image" %></div>
+<%= link_to "Edit", edit_admin_artifact_path(@artifact), class: "btn btn-primary" %>
+<%= link_to "Delete", admin_artifact_path(@artifact), method: :delete, class: "btn btn-primary" %>

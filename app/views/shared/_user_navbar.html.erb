@@ -1,0 +1,22 @@
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <ul class="nav navbar-nav">
+    <li class="active"><a href="/calf_creek_horizon">Calf Creek Horizon <span class="sr-only">(current)</span></a></li>
+    <li><a href="/sites">Sites</a></li>
+    <li><a href="/map">Map</a></li>
+
+    <li class="dropdown">
+      <a href="/artifacts" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Artifacts<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="/artifacts/andice">Andice Points</a></li>
+        <li><a href="/artifacts/bell">Bell Points</a></li>
+        <li><a href="/artifacts/calf_creek">Calf Creek Points</a></li>
+        <li role="separator" class="divider"></li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="#">Welcome <%= current_user.first_name %></a></li>
+    <li><%= link_to "Logout", logout_path, method: :delete %></li>
+  </ul>
+</div><!-- /.navbar-collapse -->

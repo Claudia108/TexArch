@@ -1,0 +1,77 @@
+
+
+
+<main class="container">
+  <h2>Calf Creek Horizon </h2>
+
+  <div class="row">
+    <div class="content-box">
+      <div class="col-md-7">
+
+        <p>The CCH (6,000 - 5,800 BP) is an Early-Middle Archaic interval when
+          foragers and bison hunters of the Southern Plains invested a great
+          deal of time and skill in producing some of the more complex projectile
+          points and notching technology in the archaeological record of
+          North America.</p>
+
+        <p>The Calf Creek, Andice, and Bell projectile points are associated
+          with the CCH and have been found in Arkansas, Kansas, Missouri,
+          Oklahoma and Texas, and there is limited evidence in Colorado,
+          New Mexico, northern Tamaulipas, and Utah.<br>
+          <%= link_to "Learn more", cch_info_path %></p>
+
+        <div id="artifact-links">
+          <%= image_tag("figure14.jpg", class: "welcome-image", alt: "Projectile Points" ) %>
+
+          <div class="row" id="point-button">
+            <div class="col-md-5">
+              <%= link_to "Andice Points", andice_path, class: "btn btn-primary" %>
+            </div>
+            <div class="col-md-4">
+              <%= link_to "Bell Points", bell_path, class: "btn btn-primary" %>
+            </div>
+            <div class="col-md-3">
+              <%= link_to "Calf Creek Points", calf_creek_path, class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-box">
+      <div class="col-md-4">
+        <h4>Geographical Range of the Calf Creek Horizon</h4>
+        <%= image_tag("figure1.jpg", class: "welcome-image", alt: "Flake Debris") %>
+      </div>
+    </div>
+    <div class="row">
+
+    <div class="content-box">
+      <div class="col-md-7">
+        <p><b>The extensive flake debris (debitage) </b>that is a byproduct of making
+          stone tools contains a great deal of information pertaining to the
+          technological behaviors incorporated in any given lithic technology,
+          whether it is highly complex or simple and 'generic'.</p>
+
+        <p>For instance, in archaeological sites where CCH point types are
+          found they are often found in association with notching flakes
+          that are diagnostic flake debris that comes from specific indirect
+          percussion techniques involved in their removal during manufacturing
+          of new projectile points.  Such flakes are pictured here from
+          the Gault Site.</p>
+        <%= image_tag("figure11.jpg", class: "welcome-image", alt: "Flake Debris") %>
+      </div>
+    </div>
+  <div class="content-box">
+    <div class="col-md-5">
+      <p><b>Preforms </b>are an early stage in the sequence of stone tool
+        production that establish the size, shape and contours supportive
+        to the final lance or projectile point form.  Preforms associated
+        with Andice and Calf Creek Points are represented here.</p>
+
+      <%= image_tag("cch_preforms.jpg", class: "welcome-image", alt: "Preforms") %>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+</main>

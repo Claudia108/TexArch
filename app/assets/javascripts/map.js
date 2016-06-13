@@ -43,7 +43,7 @@ var initMap = function(response) {
             '<p>Information: <a href="http://www.gaultschool.org/Home.aspx", target="_blank">' +
             'http://www.gaultschool.org/Home.aspx' +
             '</a></p>'+
-            '<img src="http://www.texasbeyondhistory.net/gault/images/2001tamu-sm2.jpg", width="250px"' +
+            // '<img src="http://www.texasbeyondhistory.net/gault/images/2001tamu-sm2.jpg", width="250px"' +
             '</div>' + '</div>';
 
         var infowindow = new google.maps.InfoWindow({

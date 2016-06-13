@@ -1,0 +1,7 @@
+<h2>All Artifacts</h2>
+
+<% @artifacts.each do |artifact| %>
+  <%= link_to image_tag(artifact.image.url(:thumb)), admin_artifact_path(artifact.id), class: "" %>
+  <p>Artifact UI: <%= artifact.ui %></p>
+  <p>Artifact Point Type: <%= artifact.point_type %></p>
+<% end %>

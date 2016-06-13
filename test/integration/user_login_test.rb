@@ -27,4 +27,5 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     refute page.has_content?("Logout")
     assert page.has_content?("Sign in with Google")
   end
+
 end

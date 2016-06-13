@@ -1,30 +1,5 @@
-<h2> <%= @site.name %> </h2>
+<%= render partial: "shared/site_show" %>
 
-<div class="col-md-6">
-  <table class="table table-striped col-md-6">
-    <thead>
-      <tr>
-        <th>Site Attributes</th>
-        <th>Coordinates</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Site Name</td>
-        <td><%= @site.name %></td>
-      </tr>
-      <tr>
-        <td>Longitude</td>
-        <td> <%= @site.longitude %></td>
-      </tr>
-      <tr>
-        <td>Latitude</td>
-        <td> <%= @site.latitude %></td>
-      </tr>
-      <tr>
-        <td>Site Type</td>
-        <td> <%= @site.site_type %></td>
-      </tr>
-    </tbody>
-  </table>
+  <%= link_to "Edit", edit_admin_site_path(@site.id), class: "btn btn-primary" %>
+  <%= link_to "Delete", admin_site_path(@site.id), method: :delete, class: "btn btn-primary" %>
 </div>

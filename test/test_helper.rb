@@ -30,11 +30,15 @@ class ActiveSupport::TestCase
     })
   end
 
-  def login_user(user)
-    stub_omniauth
+  def login_user
+    User.from_omniauth(stub_omniauth)
+    user = User.find_by(uid: "15485124")
     visit '/'
-    click_link("Sign in with Google")
-
+    within(".navbar-right") do
+      click_link("Sign in with Google")
+    end
+    assert_equal '/', current_path
+    user
   end
 
   def admin_login
