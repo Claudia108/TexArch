@@ -14,13 +14,16 @@
       </button>
       <a class="navbar-brand" href="/">HOME</a>
     </div>
-    <% if current_user %>
+    <% if current_user && current_user.admin? %>
     <%= render partial: "shared/admin_navbar" %>
+    <% elsif current_user %>
+    <% binding.pry %>
+    <%= render partial: "shared/user_navbar" %>
     <% else %>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/calfcreek_horizon">Calf Creek Horizon <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="/calf_creek_horizon">Calf Creek Horizon <span class="sr-only">(current)</span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Sign in with Google", google_login_path %></li>

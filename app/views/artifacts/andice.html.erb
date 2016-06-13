@@ -1,0 +1,7 @@
+<h2>All Andice Points</h2>
+
+<% @andice.each do |andice| %>
+  <%= link_to image_tag(andice.image.url(:thumb)), artifact_path(andice.id), class: "index_image" %>
+  <p>Artifact UI: <%= andice.ui %></p>
+  <p>Artifact Point Type: <%= andice.point_type %></p>
+<% end %>

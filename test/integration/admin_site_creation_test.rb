@@ -20,7 +20,7 @@ class AdminSiteCreationTest < ActionDispatch::IntegrationTest
     fill_in "site[latitude]", with: "39.742043"
     find(:css, "#radio1").set(true)
 
-    click_button("Add this Site")
+    click_button("Add Site")
 
     assert_equal admin_site_path(Site.last.id), current_path
     assert page.has_content?("Site Name")
@@ -55,8 +55,8 @@ class AdminSiteCreationTest < ActionDispatch::IntegrationTest
     site = Site.first
 
     assert_equal '/admin/dashboard', current_path
-    # click_link("Sites")
-    visit "/admin/sites"
+    click_link("Sites")
+    # visit "/admin/sites"
     assert_equal admin_sites_path, current_path
 
     click_link(site.name)

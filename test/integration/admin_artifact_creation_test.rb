@@ -17,19 +17,19 @@ class AdminArtifactCreationTest < ActionDispatch::IntegrationTest
     assert_equal new_admin_artifact_path, current_path
 
     fill_in "artifact[ui]", with: "17"
-    fill_in "artifact[point_type]", with: "Bell"
     fill_in "artifact[max_length]", with: "1500"
     fill_in "artifact[max_thickness]", with: "47"
     fill_in "artifact[max_width]", with: "700"
     fill_in "artifact[basal_edge_width]", with: "12"
     select(site.name, from: "artifact[site_id]")
+    select("Andice", from: "artifact[point_type]")
     attach_file("artifact[image]", 'app/assets/images/andice.jpg')
 
     click_button("Add Artifact")
 
     assert_equal admin_artifact_path(Artifact.last.id), current_path
     assert page.has_content?("Point Type")
-    assert page.has_content?("Bell")
+    assert page.has_content?("Andice")
     assert page.has_css?("img[src*='andice.jpg']")
   end
 
@@ -46,11 +46,11 @@ class AdminArtifactCreationTest < ActionDispatch::IntegrationTest
     assert_equal new_admin_artifact_path, current_path
 
     fill_in "artifact[ui]", with: "17"
-    fill_in "artifact[point_type]", with: "Bell"
     fill_in "artifact[max_length]", with: "1500"
     fill_in "artifact[max_thickness]", with: "47"
     fill_in "artifact[max_width]", with: "700"
     fill_in "artifact[basal_edge_width]", with: "12"
+    select("Bell", from: "artifact[point_type]")
     select(site.name, from: "artifact[site_id]")
     attach_file("artifact[image]", 'app/assets/images/andice.jpg')
     click_button("Add Artifact")
@@ -59,8 +59,8 @@ class AdminArtifactCreationTest < ActionDispatch::IntegrationTest
     click_link("Edit")
     assert_equal edit_admin_artifact_path(Artifact.last.id), current_path
 
-    fill_in "artifact[point_type]", with: "Andice"
     fill_in "artifact[max_thickness]", with: "4987"
+    select("Andice", from: "artifact[point_type]")
     select(new_site.name, from: "artifact[site_id]")
     attach_file("artifact[image]", "#{new_image}")
 
