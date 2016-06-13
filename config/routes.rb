@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   resources :sites, only: [:show, :index]
 
-  get '/map', to: 'map#show', as: :map_path
+  get '/map', to: 'map#show', as: :map
 
   get '/auth/google_oauth2', as: :google_login
   get '/auth/google_oauth2/callback', to: 'sessions#create'
