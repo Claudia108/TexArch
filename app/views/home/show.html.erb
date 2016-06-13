@@ -21,47 +21,75 @@
           <%= link_to "Learn more", cch_info_path %></p>
 
         <div id="artifact-links">
-          <%= image_tag("figure14.jpg", class: "welcome-image", alt: "Projectile Points" ) %>
+          <%= image_tag("Figure14.jpg", class: "welcome-image", alt: "Projectile Points" ) %>
 
           <div class="row" id="point-button">
             <div class="col-md-1">
+            </div>
+            <% if current_user && current_user.admin? %>
+              <div class="col-md-4">
+                <%= link_to "Andice Points", admin_points_path("Andice"), class: "btn btn-primary" %>
+              </div>
+              <div class="col-md-4">
+                <%= link_to "Calf Creek Points", admin_points_path("Calf Creek"), class: "btn btn-primary" %>
+              </div>
+              <div class="col-md-3">
+                <%= link_to "Bell Points", admin_points_path("Bell"), class: "btn btn-primary" %>
+              </div>
 
-            </div>
-            <div class="col-md-4">
-              <% if current_user && current_user.admin? %>
-                <%= link_to "Andice Points", admin_andice_path, class: "btn btn-primary" %>
-              <% else %>
-                <%= link_to "Andice Points", andice_path, class: "btn btn-primary" %>
-              <% end %>
-            </div>
-            <div class="col-md-4">
-              <% if current_user && current_user.admin? %>
-                <%= link_to "Calf Creek Points", admin_calf_creek_path, class: "btn btn-primary" %>
-              <% else %>
-                <%= link_to "Calf Creek Points", calf_creek_path, class: "btn btn-primary" %>
-              <% end %>
-            </div>
-            <div class="col-md-3">
-              <% if current_user && current_user.admin? %>
-                <%= link_to "Bell Points", admin_bell_path, class: "btn btn-primary" %>
-              <% else %>
-                <%= link_to "Bell Points", bell_path, class: "btn btn-primary" %>
+            <% elsif current_user %>
+              <div class="col-md-4">
+                <%= link_to "Andice Points", points_path("Andice"), class: "btn btn-primary" %>
+              </div>
+              <div class="col-md-4">
+                <%= link_to "Calf Creek Points", points_path("Calf Creek"), class: "btn btn-primary" %>
+              </div>
+              <div class="col-md-3">
+                <%= link_to "Bell Points", points_path("Bell"), class: "btn btn-primary" %>
+              </div>
+
+            <% else %>
+
+              <div class="col-md-4">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Andice Points</button>
+                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">Please login to see data.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Calf Creek Points</button>
+                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">Please login to see data.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Bell Points</button>
+                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">Please login to see data.</div>
+                  </div>
+                </div>
+              </div>
               <% end %>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="content-box">
-      <div class="col-md-5">
-        <h4>Geographical Range of the Calf Creek Horizon</h4>
-        <%= link_to image_tag("figure1.jpg", class: "welcome-image", alt: "Flake Debris"), map_path %>
+
+      <div class="content-box">
+        <div class="col-md-5 shadow-element padded">
+          <h4>Geographical Range of the Calf Creek Horizon</h4>
+          <%= link_to image_tag("Figure1.jpg", class: "welcome-image", alt: "Flake Debris"), map_path %>
+        </div>
       </div>
     </div>
-
     <div class="row">
       <div class="content-box">
-        <div class="col-md-6">
+        <div class="col-md-7 shadow-element">
           <p><b>The extensive flake debris (debitage) </b>that is a byproduct of making
             stone tools contains a great deal of information pertaining to the
             technological behaviors incorporated in any given lithic technology,
@@ -73,11 +101,11 @@
             percussion techniques involved in their removal during manufacturing
             of new projectile points.  Such flakes are pictured here from
             the Gault Site.</p>
-          <%= image_tag("figure11.jpg", class: "welcome-image", alt: "Flake Debris") %>
+          <%= image_tag("Figure11.jpg", class: "welcome-image", alt: "Flake Debris") %>
         </div>
       </div>
       <div class="content-box">
-        <div class="col-md-6">
+        <div class="col-md-5 padded">
           <p><b>Preforms </b>are an early stage in the sequence of stone tool
             production that establish the size, shape and contours supportive
             to the final lance or projectile point form.  Preforms associated

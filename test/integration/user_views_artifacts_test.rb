@@ -15,7 +15,7 @@ class UserLoginTest < ActionDispatch::IntegrationTest
       click_link("Andice Points")
     end
 
-    assert_equal andice_path, current_path
+    assert_equal points_path("Andice"), current_path
     assert page.has_content?("Artifact Point Type: Andice")
     assert_equal 2, andice.count
     refute page.has_content?("Artifact Point Type: Bell")
@@ -31,7 +31,7 @@ class UserLoginTest < ActionDispatch::IntegrationTest
       click_link("Bell Points")
     end
 
-    assert_equal bell_path, current_path
+    assert_equal points_path("Bell"), current_path
     assert page.has_content?("Artifact Point Type: Bell")
     assert_equal 2, bell.count
     refute page.has_content?("Artifact Point Type: Andice")
@@ -47,7 +47,7 @@ class UserLoginTest < ActionDispatch::IntegrationTest
       click_link("Calf Creek Points")
     end
 
-    assert_equal calf_creek_path, current_path
+    assert_equal points_path("Calf Creek"), current_path
     assert page.has_content?("All Calf Creek Points")
     assert_equal 2, calf_creek.count
     refute page.has_content?("Artifact Point Type: Andice")

@@ -16,7 +16,12 @@ class Admin::ArtifactsController < Admin::BaseController
   end
 
   def index
-    @artifacts = Artifact.all
+    if params[:point_type] == "Calf Creek"
+      @calf_creek = Artifact.where(point_type: "Calf Creek")
+      render :calf_creek
+    else
+      @artifacts = Artifact.where(point_type: params[:point_type])
+    end
   end
 
   def show
@@ -44,19 +49,6 @@ class Admin::ArtifactsController < Admin::BaseController
     flash[:notice] = "Artifact Deleted!"
     redirect_to admin_artifacts_path
   end
-
-  def andice
-    @andice = Artifact.where(point_type: "Andice")
-  end
-
-  def bell
-    @bell = Artifact.where(point_type: "Bell")
-  end
-
-  def calf_creek
-    @calf_creek = Artifact.where(point_type: "Calf Creek")
-  end
-
 
   private
 
