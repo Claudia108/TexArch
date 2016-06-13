@@ -1,0 +1,31 @@
+<h2>All Calf Creek Points</h2>
+<div class="row">
+
+  <div class="col-md-10">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Artifact UI</th>
+          <th>Maximum Length</th>
+          <th>Maximum Width</th>
+          <th>Maximum Thickness</th>
+          <th>Basal Edge Width</th>
+          <th>Site</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      <% @calf_creek.each do |calf_creek| %>
+        <tr>
+          <td> <%= calf_creek.ui %></td>
+          <td> <%= calf_creek.max_length %> mm</td>
+          <td> <%= calf_creek.max_width %> mm</td>
+          <td> <%= calf_creek.max_thickness %> mm</td>
+          <td> <%= calf_creek.basal_edge_width %> mm</td>
+          <td> <%= calf_creek.site.name %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

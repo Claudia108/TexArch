@@ -11,14 +11,17 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/dashboard', to: 'users#show', as: :dashboard
+    get '/artifacts/andice', to: 'artifacts#andice', as: :andice
+    get '/artifacts/bell', to: 'artifacts#bell', as: :bell
+    get '/artifacts/calf_creek', to: 'artifacts#calf_creek', as: :calf_creek
     resources :artifacts
     resources :sites
   end
 
+  get '/artifacts/andice', to: 'artifacts#andice', as: :andice
+  get '/artifacts/bell', to: 'artifacts#bell', as: :bell
+  get '/artifacts/calf_creek', to: 'artifacts#calf_creek', as: :calf_creek
   resources :artifacts, only: [:show]
-  get '/arifacts/andice', to: 'artifacts#andice', as: :andice
-  get '/arifacts/bell', to: 'artifacts#bell', as: :bell
-  get '/arifacts/calf_creek', to: 'artifacts#calf_creek', as: :calf_creek
 
   resources :sites, only: [:show, :index]
 

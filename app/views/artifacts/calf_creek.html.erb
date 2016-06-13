@@ -1,7 +1,1 @@
-<h2>All Calf Creek Points</h2>
-
-<% @calf_creek.each do |calf_creek| %>
-  <%= link_to image_tag(calf_creek.image.url(:thumb)), artifact_path(calf_creek.id), class: "index-image" %>
-  <p>Artifact UI: <%= calf_creek.ui %></p>
-  <p>Artifact Point Type: <%= calf_creek.point_type %></p>
-<% end %>
+<%= render partial: "shared/calf_creek_partial" %>

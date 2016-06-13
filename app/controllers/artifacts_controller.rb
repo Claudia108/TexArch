@@ -1,6 +1,7 @@
 class ArtifactsController < ApplicationController
 
   def show
+    binding.pry
     @artifact = Artifact.find(params[:id])
   end
 

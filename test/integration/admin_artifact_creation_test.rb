@@ -78,6 +78,7 @@ class AdminArtifactCreationTest < ActionDispatch::IntegrationTest
     artifact = Artifact.first
 
     assert_equal '/admin/dashboard', current_path
+    assert page.has_content?("#{admin.first_name}, welcome to your dashboard")
     click_link("Artifacts")
 
     assert_equal admin_artifacts_path, current_path

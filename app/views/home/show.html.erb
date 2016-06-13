@@ -22,14 +22,23 @@
 
         <div id="artifact-links">
           <%= image_tag("figure14.jpg", class: "welcome-image", alt: "Projectile Points" ) %>
-          <%= link_to "Andice Points", andice_path, class: "btn btn-primary" %>
-          <%= link_to "Bell Points", bell_path, class: "btn btn-primary" %>
-          <%= link_to "Calf Creek Points", calf_creek_path, class: "btn btn-primary" %>
+
+          <div class="row" id="point-button">
+            <div class="col-md-5">
+              <%= link_to "Andice Points", andice_path, class: "btn btn-primary" %>
+            </div>
+            <div class="col-md-4">
+              <%= link_to "Bell Points", bell_path, class: "btn btn-primary" %>
+            </div>
+            <div class="col-md-3">
+              <%= link_to "Calf Creek Points", calf_creek_path, class: "btn btn-primary" %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="content-box">
-      <div class="col-md-5">
+      <div class="col-md-4">
         <h4>Geographical Range of the Calf Creek Horizon</h4>
         <%= image_tag("figure1.jpg", class: "welcome-image", alt: "Flake Debris") %>
       </div>
