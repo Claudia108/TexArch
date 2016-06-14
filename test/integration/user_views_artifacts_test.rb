@@ -53,4 +53,22 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     refute page.has_content?("Artifact Point Type: Andice")
     refute page.has_content?("Artifact Point Type: Bell")
   end
+
+  test "user views single artifact" do
+    login_user
+    artifact = Artifact.find_by(point_type: "Bell")
+
+    visit '/calf_creek_horizon'
+    within('#artifact-links') do
+      click_link("Bell Points")
+    end
+    assert_equal points_path("Bell"), current_path
+    find("#image-#{artifact.id}").click
+
+    assert_equal artifact_path(artifact.id), current_path
+    assert page.has_content?("Point Type")
+    assert page.has_content?("Bell")
+    assert page.has_content?("1456")
+    assert page.has_content?("1003")
+  end
 end

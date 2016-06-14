@@ -27,54 +27,14 @@
             <div class="col-md-1">
             </div>
             <% if current_user && current_user.admin? %>
-              <div class="col-md-4">
-                <%= link_to "Andice Points", admin_points_path("Andice"), class: "btn btn-primary" %>
-              </div>
-              <div class="col-md-4">
-                <%= link_to "Calf Creek Points", admin_points_path("Calf Creek"), class: "btn btn-primary" %>
-              </div>
-              <div class="col-md-3">
-                <%= link_to "Bell Points", admin_points_path("Bell"), class: "btn btn-primary" %>
-              </div>
-
+              <%= render partial: "shared/admin_nav_buttons" %>
             <% elsif current_user %>
-              <div class="col-md-4">
-                <%= link_to "Andice Points", points_path("Andice"), class: "btn btn-primary" %>
-              </div>
-              <div class="col-md-4">
-                <%= link_to "Calf Creek Points", points_path("Calf Creek"), class: "btn btn-primary" %>
-              </div>
-              <div class="col-md-3">
-                <%= link_to "Bell Points", points_path("Bell"), class: "btn btn-primary" %>
-              </div>
-
+              <%= render partial: "shared/user_nav_buttons", locals: { path: "points_path(:point_type)" } %>
             <% else %>
-
-              <div class="col-md-4">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Andice Points</button>
-                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-                  <div class="modal-dialog modal-sm">
-                    <div class="modal-content">Please login to see data.</div>
-                  </div>
-                </div>
+              <div class="col-md-12">
+                <%= link_to "Please login to see the Data", google_login_path, class: "btn btn-primary offset-center" %>
               </div>
-              <div class="col-md-4">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Calf Creek Points</button>
-                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-                  <div class="modal-dialog modal-sm">
-                    <div class="modal-content">Please login to see data.</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Bell Points</button>
-                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-                  <div class="modal-dialog modal-sm">
-                    <div class="modal-content">Please login to see data.</div>
-                  </div>
-                </div>
-              </div>
-              <% end %>
+            <% end %>
             </div>
           </div>
         </div>
@@ -83,13 +43,17 @@
       <div class="content-box">
         <div class="col-md-5 shadow-element padded">
           <h4>Geographical Range of the Calf Creek Horizon</h4>
-          <%= link_to image_tag("Figure1.jpg", class: "welcome-image", alt: "Flake Debris"), map_path %>
+          <% if current_user %>
+            <%= link_to image_tag("Figure1.jpg", class: "welcome-image", alt: "Flake Debris"), map_path %>
+          <% else %>
+            <%= image_tag("Figure1.jpg", class: "welcome-image", alt: "Flake Debris") %>
+          <% end %>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="content-box">
-        <div class="col-md-7 shadow-element">
+        <div class="col-md-7 shadow-element padded">
           <p><b>The extensive flake debris (debitage) </b>that is a byproduct of making
             stone tools contains a great deal of information pertaining to the
             technological behaviors incorporated in any given lithic technology,

@@ -20,7 +20,6 @@ class VisitorViewsLandingPageTest < ActionDispatch::IntegrationTest
 
     assert_equal cch_path, current_path
     assert page.has_content?("Calf Creek Horizon")
-
   end
 
   test "visitor cannot visit map, artifacts and sites" do

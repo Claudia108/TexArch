@@ -59,8 +59,6 @@ group :test do
   gem 'simplecov', :require => false
   gem 'mocha'
   gem 'database_cleaner'
-  gem 'selenium'
-  gem 'selenium-webdriver'
 end
 
 group :production do

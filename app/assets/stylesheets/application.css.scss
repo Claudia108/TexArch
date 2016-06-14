@@ -19,7 +19,6 @@ $main-light-color: white;
 $main-border: solid 2px black;
 $main-margin-top: 20px;
 
-.open .dropdown-menu{display:block;}
 
 * {
   color: black;
@@ -59,11 +58,8 @@ table th {
   margin-top: $main-margin-top;
 }
 
-.author {
-  margin-top: $main-margin-top;
-}
 .welcome-image {
-  margin: 15px 0px 15px 0px;
+  margin: 15px 10px 15px 0px;
   width: 100%;
   height: auto;
   border: $main-border;
@@ -71,9 +67,7 @@ table th {
 
 .welcome-text {
   margin: 15px 0px 15px 0px;
-
 }
-
 
 .img-fluid {
   width: 100% \9;
@@ -117,7 +111,15 @@ table th {
 }
 
 .padded {
-  padding: 0 25px;
+  padding: 20px 25px;
+}
+
+.author {
+  margin-top: 10px;
+  padding-top: 15px;
+  padding-bottom: 34px;
+  padding-left: 35px;
+  padding-right: 35px;
 }
 
 .sergio-image {
