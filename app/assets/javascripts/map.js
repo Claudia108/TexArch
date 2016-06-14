@@ -51,11 +51,16 @@ var initMap = function(response) {
           map.setCenter(marker.getPosition());
           infowindow.open(map, marker);
         });
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
-        });
+
+
       });
     }
   }
   setMarkers(response);
 }
+
+ // google.maps.event.addListener(mapMarker, "closeclick", function()
+ //    {
+ //        mapRef.panTo(mapSettings.center);
+ //        mapRef.setZoom(2);
+ //    });

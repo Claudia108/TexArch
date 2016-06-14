@@ -19,6 +19,6 @@ module TexArch
     s3_region: "us-east-1",
   }
 
-    config.active_record.raise_in_transactional_callbacks = true
+    config.active_record.raise_in_transactional_callbacks = false
   end
 end
