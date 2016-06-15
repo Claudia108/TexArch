@@ -1,13 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  longitude: "-97.70975"
-  latitude: "30.89225"
+  longitude: -97.70975
+  latitude: 30.89225
   name: Gault Site
   site_type: 0
 
 two:
-  longitude: "39.50"
-  latitude: "-98.35"
+  longitude: 39.50
+  latitude: -98.35
   name: Center US
+  site_type: 1
+
+three:
+  longitude: -104.9847000
+  latitude: 39.7391500
+  name: Denver
   site_type: 1

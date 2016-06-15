@@ -1,13 +1,9 @@
-
-
-
 <main class="container">
   <h2>Calf Creek Horizon </h2>
 
   <div class="row">
     <div class="content-box">
       <div class="col-md-7">
-
         <p>The CCH (6,000 - 5,800 BP) is an Early-Middle Archaic interval when
           foragers and bison hunters of the Southern Plains invested a great
           deal of time and skill in producing some of the more complex projectile
@@ -18,21 +14,19 @@
           with the CCH and have been found in Arkansas, Kansas, Missouri,
           Oklahoma and Texas, and there is limited evidence in Colorado,
           New Mexico, northern Tamaulipas, and Utah.<br>
-          <%= link_to "Learn more", cch_info_path %></p>
+          <%= link_to "Learn more...", info_index_path, class: "btn btn-primary" %></p>
 
         <div id="artifact-links">
-          <%= image_tag("Figure14.jpg", class: "welcome-image", alt: "Projectile Points" ) %>
+          <%= image_tag("Figure14.jpg", class: "welcome-image img-rounded", alt: "Projectile Points" ) %>
 
           <div class="row" id="point-button">
             <div class="col-md-1">
             </div>
-            <% if current_user && current_user.admin? %>
-              <%= render partial: "shared/admin_nav_buttons" %>
-            <% elsif current_user %>
+            <% if current_user %>
               <%= render partial: "shared/user_nav_buttons", locals: { path: "points_path(:point_type)" } %>
             <% else %>
               <div class="col-md-12">
-                <%= link_to "Please login to see the Data", google_login_path, class: "btn btn-primary offset-center" %>
+                <%= link_to "Please Login to See The Data", google_login_path, class: "btn btn-primary offset-center" %>
               </div>
             <% end %>
             </div>
@@ -42,11 +36,11 @@
 
       <div class="content-box">
         <div class="col-md-5 shadow-element padded">
-          <h4>Geographical Range of the Calf Creek Horizon</h4>
+          <h4>Geographic Range of the Calf Creek Horizon</h4>
           <% if current_user %>
-            <%= link_to image_tag("Figure1.jpg", class: "welcome-image", alt: "Flake Debris"), map_path %>
+            <%= link_to image_tag("Figure1.jpg", class: "welcome-image img-rounded", alt: "Geographic Range"), map_path %>
           <% else %>
-            <%= image_tag("Figure1.jpg", class: "welcome-image", alt: "Flake Debris") %>
+            <%= image_tag("Figure1.jpg", class: "welcome-image img-rounded", alt: "Geographic Range") %>
           <% end %>
         </div>
       </div>
@@ -65,7 +59,7 @@
             percussion techniques involved in their removal during manufacturing
             of new projectile points.  Such flakes are pictured here from
             the Gault Site.</p>
-          <%= image_tag("Figure11.jpg", class: "welcome-image", alt: "Flake Debris") %>
+          <%= image_tag("Figure11.jpg", class: "welcome-image img-rounded", alt: "Flake Debris") %>
         </div>
       </div>
       <div class="content-box">
@@ -75,7 +69,7 @@
             to the final lance or projectile point form.  Preforms associated
             with Andice and Calf Creek Points are represented here.</p>
 
-          <%= image_tag("cch_preforms.jpg", class: "welcome-image", alt: "Preforms") %>
+          <%= link_to image_tag("cch_preforms.jpg", class: "welcome-image img-rounded", alt: "Preforms"), preforms_path, id:"preform" %>
         </div>
     </div>
   </div>

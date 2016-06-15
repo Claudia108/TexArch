@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
       new_user.email              = auth_info.info.email
     end
   end
+
+  def first_visit
+    self.created_at.strftime('%Y-%m-%d,%l:%M %p')
+  end
 end

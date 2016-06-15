@@ -6,7 +6,7 @@ class SitesControllerTest < ActionController::TestCase
     get :index
 
     assert_response :success
-    assert_equal 2, sites.count
+    assert_equal 3, sites.count
     assert sites.first.has_attribute?("name")
     assert sites.first.has_attribute?("longitude")
   end

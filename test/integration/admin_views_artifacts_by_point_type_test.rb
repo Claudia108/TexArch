@@ -14,12 +14,13 @@ class AdminViewsArtifactsByPointTypeTest < ActionDispatch::IntegrationTest
     within("#artifact-links") do
       click_link("Andice Points")
     end
-
-    assert_equal admin_points_path("Andice"), current_path
-    assert page.has_content?("Artifact Point Type: Andice")
-    assert_equal 2, andice.count
-    refute page.has_content?("Artifact Point Type: Bell")
-    refute page.has_content?("Artifact Point Type: Calf Creek")
+    within("#table-#{andice.first.id}") do
+      assert_equal points_path("Andice"), current_path
+      assert page.has_content?("Andice")
+      assert_equal 2, andice.count
+      refute page.has_content?("Bell")
+      refute page.has_content?("Calf Creek")
+    end
   end
 
   test "admin can view bell points" do
@@ -31,11 +32,14 @@ class AdminViewsArtifactsByPointTypeTest < ActionDispatch::IntegrationTest
       click_link("Bell Points")
     end
 
-    assert_equal admin_points_path("Bell"), current_path
-    assert page.has_content?("Artifact Point Type: Bell")
-    assert_equal 2, bell.count
-    refute page.has_content?("Artifact Point Type: Andice")
-    refute page.has_content?("Artifact Point Type: Calf Creek")
+    assert_equal points_path("Bell"), current_path
+
+    within("#table-#{bell.first.id}") do
+      assert page.has_content?("Bell")
+      assert_equal 2, bell.count
+      refute page.has_content?("Andice")
+      refute page.has_content?("Calf Creek")
+    end
   end
 
   test "admin can view Calf Creek points" do
@@ -47,10 +51,13 @@ class AdminViewsArtifactsByPointTypeTest < ActionDispatch::IntegrationTest
       click_link("Calf Creek Points")
     end
 
-    assert_equal admin_points_path("Calf Creek"), current_path
+    assert_equal points_path("Calf Creek"), current_path
     assert page.has_content?("All Calf Creek Points")
     assert_equal 2, calf_creek.count
-    refute page.has_content?("Artifact Point Type: Andice")
-    refute page.has_content?("Artifact Point Type: Bell")
+
+    within("table") do
+      refute page.has_content?("Andice")
+      refute page.has_content?("Bell")
+    end
   end
 end

@@ -1,5 +1,14 @@
-<h1> <%= @admin.first_name %>, welcome to your dashboard</h1>
-<div class="link">
-  <p><%= link_to "Add a new Artifact", new_admin_artifact_path %></p>
-  <p><%= link_to "Add a new Site", new_admin_site_path %></p>
+<h1> <%=current_user.first_name %>, welcome to your dashboard</h1>
+
+<div class="list-group">
+    <p class="list-group-item"><b>Total Number of Artifacts: <%= @presenter.artifact_count%></b></p>
+    <p class="list-group-item"><b>Total Number of Sites: <%= @presenter.site_count %></b></p>
+
+    <%= link_to "Add a new Artifact", new_admin_artifact_path,
+        class: "list-group-item active" %>
+    <%= link_to "Add a new Site", new_admin_site_path,
+        class: "list-group-item active" %>
+
+    <%= link_to "#{@presenter.user_count} Current User(s)", admin_users_path,
+        class: "list-group-item active" %>
 </div>

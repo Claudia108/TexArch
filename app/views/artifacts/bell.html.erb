@@ -1,7 +1,0 @@
-<h2>All Bell Points</h2>
-
-<% @bell.each do |bell| %>
-  <%= link_to image_tag(bell.image.url(:thumb)), artifact_path(bell.id), class: "index-image" %>
-  <p>Artifact UI: <%= bell.ui %></p>
-  <p>Artifact Point Type: <%= bell.point_type %></p>
-<% end %>

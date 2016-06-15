@@ -1,4 +1,13 @@
 <h2>All Sites</h2>
-<% @sites.each do |site| %>
-  <p><%= link_to site.name, site_path(site) %></p>
+
+<div class="list-group">
+<% if admin_authenticated %>
+  <p><%= link_to "Add a new Site", new_admin_site_path,
+      class: "list-group-item active" %></p>
 <% end %>
+
+<% @sites.each do |site| %>
+    <p><%= link_to site.name, site_path(site),
+        class: "list-group-item" %></p>
+<% end %>
+</div>

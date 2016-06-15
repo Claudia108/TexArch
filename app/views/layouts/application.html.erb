@@ -7,17 +7,20 @@
   </head>
   <body>
     <%= render partial: "/shared/navbar" %>
+
     <div class="container">
       <% flash.each do |type, message| %>
-        <div class="alert alert-success alert-link" role="alert"><h5><%= content_tag :div, message.html_safe, class:"flash-#{type}" %></h5></div>
+        <div class="alert alert-successalert-link" role="alert"><h5><%= content_tag :div, message.html_safe, class:"flash-#{type}" %></h5></div>
       <% end %>
 
       <%= yield %>
     </div>
 
     <%= javascript_include_tag 'application' %>
+
         <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["google_api_key"] %>&callback=initMap"
         async defer></script>
+
     <script>
       $(document).ready(function(){
         $('.dropdown-toggle').dropdown();
