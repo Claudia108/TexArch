@@ -3,7 +3,10 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :admin_authenticated
+  helper_method :current_user,
+                :admin_authenticated,
+                :require_user
+
 
   def current_user
     @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
@@ -11,6 +14,10 @@ class ApplicationController < ActionController::Base
 
   def admin_authenticated
     current_user.present? && current_user.admin?
+  end
+
+  def require_user
+    render file: '/public/404' unless current_user
   end
 
 end

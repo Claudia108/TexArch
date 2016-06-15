@@ -1,5 +1,6 @@
 class ArtifactsController < ApplicationController
-
+  before_action :require_user
+  
   def show
     @artifact = Artifact.find(params[:id])
   end

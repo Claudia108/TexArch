@@ -1,4 +1,5 @@
 class SitesController < ApplicationController
+  before_action :require_user
 
   def show
     @site = Site.find(params[:id])
