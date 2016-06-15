@@ -17,7 +17,7 @@
           <%= link_to "Learn more...", info_index_path, class: "btn btn-primary" %></p>
 
         <div id="artifact-links">
-          <%= image_tag("Figure14.jpg", class: "welcome-image", alt: "Projectile Points" ) %>
+          <%= image_tag("Figure14.jpg", class: "welcome-image img-rounded", alt: "Projectile Points" ) %>
 
           <div class="row" id="point-button">
             <div class="col-md-1">
@@ -38,9 +38,9 @@
         <div class="col-md-5 shadow-element padded">
           <h4>Geographic Range of the Calf Creek Horizon</h4>
           <% if current_user %>
-            <%= link_to image_tag("Figure1.jpg", class: "welcome-image", alt: "Geographic Range"), map_path %>
+            <%= link_to image_tag("Figure1.jpg", class: "welcome-image img-rounded", alt: "Geographic Range"), map_path %>
           <% else %>
-            <%= image_tag("Figure1.jpg", class: "welcome-image", alt: "Geographic Range") %>
+            <%= image_tag("Figure1.jpg", class: "welcome-image img-rounded", alt: "Geographic Range") %>
           <% end %>
         </div>
       </div>
@@ -59,7 +59,7 @@
             percussion techniques involved in their removal during manufacturing
             of new projectile points.  Such flakes are pictured here from
             the Gault Site.</p>
-          <%= image_tag("Figure11.jpg", class: "welcome-image", alt: "Flake Debris") %>
+          <%= image_tag("Figure11.jpg", class: "welcome-image img-rounded", alt: "Flake Debris") %>
         </div>
       </div>
       <div class="content-box">
@@ -69,7 +69,7 @@
             to the final lance or projectile point form.  Preforms associated
             with Andice and Calf Creek Points are represented here.</p>
 
-          <%= link_to image_tag("cch_preforms.jpg", class: "welcome-image", alt: "Preforms"), preforms_path, id:"preform" %>
+          <%= link_to image_tag("cch_preforms.jpg", class: "welcome-image img-rounded", alt: "Preforms"), preforms_path, id:"preform" %>
         </div>
     </div>
   </div>

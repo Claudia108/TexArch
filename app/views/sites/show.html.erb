@@ -25,6 +25,7 @@
         <td>Site Type</td>
         <td> <%= @site.site_type %></td>
       </tr>
+      <%= link_to "See Map for Location", map_path, class: "btn btn-primary" %>
       <% if admin_authenticated %>
         <tr>
           <td colspan=2>

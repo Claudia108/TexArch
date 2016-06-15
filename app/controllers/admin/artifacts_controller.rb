@@ -26,7 +26,7 @@ class Admin::ArtifactsController < Admin::BaseController
       redirect_to artifact_path(@artifact.id)
     else
       flash[:alert] = "Data is missing or invalid! Try again"
-      redirect_to edit_admin_artifact_path
+      redirect_to edit_admin_artifact_path(@artifact)
     end
   end
 

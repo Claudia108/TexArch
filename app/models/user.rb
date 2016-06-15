@@ -12,6 +12,6 @@ class User < ActiveRecord::Base
   end
 
   def first_visit
-    self.created_at.strftime('%Y-%m-%d, %l:%M %p')
+    self.created_at.strftime('%Y-%m-%d,%l:%M %p')
   end
 end
