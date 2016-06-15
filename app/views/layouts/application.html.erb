@@ -9,7 +9,7 @@
     <%= render partial: "/shared/navbar" %>
     <div class="container">
       <% flash.each do |type, message| %>
-        <div class="alert alert-success alert-link" role="alert"><h5><%= content_tag :div, message.html_safe, class:"flash-#{type}" %></h5></div>
+        <div class="alert alert-link" role="alert"><h5><%= content_tag :div, message.html_safe, class:"flash-#{type}" %></h5></div>
       <% end %>
 
       <%= yield %>

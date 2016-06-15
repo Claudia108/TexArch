@@ -34,7 +34,7 @@ class Admin::ArtifactsController < Admin::BaseController
     artifact = Artifact.find(params[:id])
     artifact.destroy
     flash[:notice] = "Artifact with UI #{artifact.ui} Deleted!"
-    redirect_to points_path(artifact)
+    redirect_to points_path(artifact.point_type)
   end
 
   private

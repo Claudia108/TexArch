@@ -1,10 +1,14 @@
 <main class="container">
+
+  <%= link_to "Back", cch_path, class: "btn btn-primary" %>
+  <%= link_to "CCH Preforms", preforms_path, class: "btn btn-primary"%>
+
   <h2>Calf Creek Horizon </h2>
+
   <div class="content-box center">
     <div class="welcome">
-      <div>
         <%= image_tag("Andice.jpg", class: "andice-image img-rounded shadow-element",
-            alt: "Andice Point" ) %>
+            id: "andice", alt: "Andice Point" ) %>
         <p>At the terminus of the Early Archaic there was a climatic deviation,
           a cooling episode. This appears to have stimulated bison populations
           <b>The Calf Creek Horizon (CCH)</b> is a cultural period that marks such a
@@ -58,7 +62,6 @@
           Creek Horizon point types and other point types in the archaeological
           record.</p>
         <p><b>Stay tuned!</b></p>
-      </div>
     </div>
   </div>
 </main>

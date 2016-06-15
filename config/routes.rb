@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'home#index'
   get '/calf_creek_horizon', to: 'home#show', as: :cch
-  get '/calf_creek_horizon_info', to: 'info#index', as: :cch_info
+
+  resources :info, only: [:index]
+  get '/info/preforms', to: 'info#show', as: :preforms
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/dashboard', to: 'users#show', as: :dashboard
+    resources :users, only: [:index]
 
     resources :artifacts, only: [:new, :create, :edit, :update, :destroy]
     resources :sites, only: [:new, :create, :edit, :update, :destroy]

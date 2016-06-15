@@ -1,6 +1,3 @@
-
-
-
 <main class="container">
   <h2>Calf Creek Horizon </h2>
 
@@ -17,7 +14,7 @@
           with the CCH and have been found in Arkansas, Kansas, Missouri,
           Oklahoma and Texas, and there is limited evidence in Colorado,
           New Mexico, northern Tamaulipas, and Utah.<br>
-          <%= link_to "Learn more", cch_info_path, class: "btn btn-primary" %></p>
+          <%= link_to "Learn more...", info_index_path, class: "btn btn-primary" %></p>
 
         <div id="artifact-links">
           <%= image_tag("Figure14.jpg", class: "welcome-image", alt: "Projectile Points" ) %>
@@ -39,11 +36,11 @@
 
       <div class="content-box">
         <div class="col-md-5 shadow-element padded">
-          <h4>Geographical Range of the Calf Creek Horizon</h4>
+          <h4>Geographic Range of the Calf Creek Horizon</h4>
           <% if current_user %>
-            <%= link_to image_tag("Figure1.jpg", class: "welcome-image", alt: "Flake Debris"), map_path %>
+            <%= link_to image_tag("Figure1.jpg", class: "welcome-image", alt: "Geographic Range"), map_path %>
           <% else %>
-            <%= image_tag("Figure1.jpg", class: "welcome-image", alt: "Flake Debris") %>
+            <%= image_tag("Figure1.jpg", class: "welcome-image", alt: "Geographic Range") %>
           <% end %>
         </div>
       </div>
@@ -72,7 +69,7 @@
             to the final lance or projectile point form.  Preforms associated
             with Andice and Calf Creek Points are represented here.</p>
 
-          <%= image_tag("cch_preforms.jpg", class: "welcome-image", alt: "Preforms") %>
+          <%= link_to image_tag("cch_preforms.jpg", class: "welcome-image", alt: "Preforms"), preforms_path, id:"preform" %>
         </div>
     </div>
   </div>

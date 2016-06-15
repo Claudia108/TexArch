@@ -6,7 +6,7 @@
 
 <div class="row">
   <% @artifacts.each do |artifact| %>
-    <div class="col-md-4">
+    <div class="col-md-4 index-height">
       <table class="table table-striped" id="table-<%= artifact.id %>">
         <tbody>
           <tr>
@@ -25,5 +25,7 @@
         id: "image-#{artifact.id}" %>
       </div>
     </div>
+
   <% end %>
 </div>
+<div class="clearfix visible-xs-block"></div>

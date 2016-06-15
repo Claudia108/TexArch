@@ -116,15 +116,23 @@ table th {
   border: $main-border;
 }
 
+.index-height {
+  height: 400px;
+}
 .index-image {
   border: $main-border;
   max-width: 100%;
 }
 
+.list-group {
+  margin-top: 40px;
+  box-shadow: none;
+}
 .list-group-item {
   margin-top: $main-margin-top;
   width: 30%;
 }
+
 .centered {
   text-align: center;
 }
@@ -145,9 +153,9 @@ table th {
 .author {
   margin-top: 10px;
   padding-top: 15px;
-  padding-bottom: 34px;
+  padding-bottom: 20px;
   padding-left: 35px;
-  padding-right: 35px;
+  padding-right: 20px;
 }
 
 .sergio-image {
@@ -157,7 +165,7 @@ table th {
 }
 
 .andice-image {
-  max-width: 250px;
+  max-width: 300px;
   margin-right: 20px;
   float: left;
   margin-bottom: 15px;

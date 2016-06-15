@@ -202,7 +202,7 @@ class AdminArtifactCreationTest < ActionDispatch::IntegrationTest
     find("#image-#{artifacts.last.id}").click
 
     click_link("Delete")
-    assert_equal admin_artifacts_path, current_path
+    assert_equal points_path(artifacts.last.point_type), current_path
     assert page.has_content?("Artifact with UI #{artifacts.last.ui} Deleted!")
 
     refute page.has_content?(artifacts.last.max_length)
