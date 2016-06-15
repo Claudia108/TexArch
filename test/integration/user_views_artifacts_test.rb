@@ -16,10 +16,13 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     end
 
     assert_equal points_path("Andice"), current_path
-    assert page.has_content?("Artifact Point Type: Andice")
-    assert_equal 2, andice.count
-    refute page.has_content?("Artifact Point Type: Bell")
-    refute page.has_content?("Artifact Point Type: Calf Creek")
+
+    within("#table-#{andice.first.id}") do
+      assert page.has_content?("Andice")
+      assert_equal 2, andice.count
+      refute page.has_content?("Bell")
+      refute page.has_content?("Calf Creek")
+    end
   end
 
   test "user can view bell points" do
@@ -32,10 +35,13 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     end
 
     assert_equal points_path("Bell"), current_path
-    assert page.has_content?("Artifact Point Type: Bell")
-    assert_equal 2, bell.count
-    refute page.has_content?("Artifact Point Type: Andice")
-    refute page.has_content?("Artifact Point Type: Calf Creek")
+
+    within("#table-#{bell.first.id}") do
+      assert page.has_content?("Bell")
+      assert_equal 2, bell.count
+      refute page.has_content?("Andice")
+      refute page.has_content?("Calf Creek")
+    end
   end
 
   test "user can view Calf Creek points" do
@@ -48,6 +54,7 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     end
 
     assert_equal points_path("Calf Creek"), current_path
+
     assert page.has_content?("All Calf Creek Points")
     assert_equal 2, calf_creek.count
     refute page.has_content?("Artifact Point Type: Andice")

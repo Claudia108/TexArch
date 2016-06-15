@@ -2,7 +2,9 @@
 
 <div class="row">
   <div class="image-fluid img-rounded col-md-7">
-    <%= image_tag @artifact.image.url(:medium), alt: "Artifact Image", class: "img-rounded", id:"artifact-mage" %>
+    <%= image_tag @artifact.image.url(:medium),
+      alt: "Artifact Image",
+      class: "img-rounded artifact-image" %>
   </div>
   <div class="col-md-5">
     <table class="table table-striped">
@@ -41,6 +43,12 @@
           <td>Site found</td>
           <td> <%= @artifact.site.name %></td>
         </tr>
+          <% if admin_authenticated %>
+          <tr><td colspan="2">
+            <%= link_to "Edit", edit_admin_artifact_path(@artifact), class: "btn btn-primary" %>
+            <%= link_to "Delete", admin_artifact_path(@artifact), method: :delete, class: "btn btn-primary" %>
+          </td></tr>
+          <% end %>
       </tbody>
     </table>
   </div>

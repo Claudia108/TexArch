@@ -16,7 +16,7 @@
 
 $main-dark-color: black;
 $main-light-color: white;
-$main-border: solid 2px black;
+$main-border: 2px solid black;
 $main-margin-top: 20px;
 
 
@@ -93,12 +93,19 @@ table th {
   padding-top: 30px;
 }
 
-#artifact-image {
-  padding-top: 20px;
+.artifact-image {
+  margin-top: 20px;
+  border: $main-border;
 }
 
 .index-image {
   border: $main-border;
+  max-height: 250px;
+  max-width: 100%;
+}
+
+.centered {
+  text-align: center;
 }
 
 #point-button {

@@ -1,13 +1,11 @@
 class Artifact < ActiveRecord::Base
   belongs_to :site
-  
+
   has_attached_file :image, styles: {
       medium: ["600x600>", :jpg],
       thumb: ["300x300>", :jpg]
     },
     default_url: "/images/landscape.jpg"
-  # validates_attachment :image,
-  # content_type: { content_type: ["image/jpeg", "image/gif", "image/png", "image/tiff"] }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   validates :point_type, presence: true
