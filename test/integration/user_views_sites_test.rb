@@ -15,7 +15,7 @@ class UserLoginTest < ActionDispatch::IntegrationTest
 
     assert_equal sites_path, current_path
     assert page.has_content?("All Sites")
-    assert_equal 2, sites.count
+    assert_equal 3, sites.count
     assert page.has_content?(sites.first.name)
     assert page.has_content?(sites.last.name)
   end

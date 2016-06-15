@@ -7,11 +7,11 @@ class Admin::SitesController < Admin::BaseController
   def create
     @site = Site.new(site_params)
     if @site.save
-      flash[:notice] = "#{@site.name} was created!"
+      flash[:notice] = "#{@site.name} Created!"
       redirect_to site_path(@site.id)
     else
-      flash[:notice] = "Invalid! Try Again"
-      render :new
+      flash[:notice] = "Data is missing or invalid! Try again"
+      redirect_to new_admin_site_path
     end
   end
 
@@ -22,17 +22,17 @@ class Admin::SitesController < Admin::BaseController
   def update
     @site = Site.find(params[:id])
     if @site.update_attributes(site_params)
-      flash[:notice] = "Site Updated!"
+      flash[:notice] = "#{@site.name} Updated!"
       redirect_to site_path(@site.id)
     else
-      flash[:notice] = "Invalid! Try Again"
-      render :edit
+      flash[:notice] = "Data is missing or invalid! Try again"
+      redirect_to edit_admin_site_path
     end
   end
 
   def destroy
     site = Site.find(params[:id])
-    flash[:alert] = "Site and its Reference in Artifacts Deleted!"
+    flash[:alert] = "Site and its Artifacts Deleted!"
     site.destroy
     redirect_to sites_path
   end

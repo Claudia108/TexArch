@@ -10,8 +10,8 @@ class Admin::ArtifactsController < Admin::BaseController
       flash[:notice] = "Artifact with UI #{@artifact.ui} created!"
       redirect_to artifact_path(@artifact.id)
     else
-      flash[:notice] = "Invalid! Try Again"
-      render :new
+      flash[:alert] = "Data is missing or invalid! Try again"
+      redirect_to new_admin_artifact_path
     end
   end
 
@@ -22,18 +22,18 @@ class Admin::ArtifactsController < Admin::BaseController
   def update
     @artifact = Artifact.find(params[:id])
     if @artifact.update_attributes(artifact_params)
-      flash[:notice] = "Artifact Updated!"
+      flash[:alert] = "Artifact with UI #{@artifact.ui} updated!"
       redirect_to artifact_path(@artifact.id)
     else
-      flash[:notice] = "Invalid! Try Again"
-      render :edit
+      flash[:alert] = "Data is missing or invalid! Try again"
+      redirect_to edit_admin_artifact_path
     end
   end
 
   def destroy
     artifact = Artifact.find(params[:id])
     artifact.destroy
-    flash[:notice] = "Artifact Deleted!"
+    flash[:notice] = "Artifact with UI #{artifact.ui} Deleted!"
     redirect_to points_path(artifact)
   end
 
