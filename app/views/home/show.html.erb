@@ -21,47 +21,39 @@
           <%= link_to "Learn more", cch_info_path %></p>
 
         <div id="artifact-links">
-          <%= image_tag("figure14.jpg", class: "welcome-image", alt: "Projectile Points" ) %>
+          <%= image_tag("Figure14.jpg", class: "welcome-image", alt: "Projectile Points" ) %>
 
           <div class="row" id="point-button">
             <div class="col-md-1">
-
             </div>
-            <div class="col-md-4">
-              <% if current_user && current_user.admin? %>
-                <%= link_to "Andice Points", admin_andice_path, class: "btn btn-primary" %>
-              <% else %>
-                <%= link_to "Andice Points", andice_path, class: "btn btn-primary" %>
-              <% end %>
-            </div>
-            <div class="col-md-4">
-              <% if current_user && current_user.admin? %>
-                <%= link_to "Calf Creek Points", admin_calf_creek_path, class: "btn btn-primary" %>
-              <% else %>
-                <%= link_to "Calf Creek Points", calf_creek_path, class: "btn btn-primary" %>
-              <% end %>
-            </div>
-            <div class="col-md-3">
-              <% if current_user && current_user.admin? %>
-                <%= link_to "Bell Points", admin_bell_path, class: "btn btn-primary" %>
-              <% else %>
-                <%= link_to "Bell Points", bell_path, class: "btn btn-primary" %>
-              <% end %>
+            <% if current_user && current_user.admin? %>
+              <%= render partial: "shared/admin_nav_buttons" %>
+            <% elsif current_user %>
+              <%= render partial: "shared/user_nav_buttons", locals: { path: "points_path(:point_type)" } %>
+            <% else %>
+              <div class="col-md-12">
+                <%= link_to "Please login to see the Data", google_login_path, class: "btn btn-primary offset-center" %>
+              </div>
+            <% end %>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="content-box">
-      <div class="col-md-5">
-        <h4>Geographical Range of the Calf Creek Horizon</h4>
-        <%= link_to image_tag("figure1.jpg", class: "welcome-image", alt: "Flake Debris"), map_path %>
+
+      <div class="content-box">
+        <div class="col-md-5 shadow-element padded">
+          <h4>Geographical Range of the Calf Creek Horizon</h4>
+          <% if current_user %>
+            <%= link_to image_tag("Figure1.jpg", class: "welcome-image", alt: "Flake Debris"), map_path %>
+          <% else %>
+            <%= image_tag("Figure1.jpg", class: "welcome-image", alt: "Flake Debris") %>
+          <% end %>
+        </div>
       </div>
     </div>
-
     <div class="row">
       <div class="content-box">
-        <div class="col-md-6">
+        <div class="col-md-7 shadow-element padded">
           <p><b>The extensive flake debris (debitage) </b>that is a byproduct of making
             stone tools contains a great deal of information pertaining to the
             technological behaviors incorporated in any given lithic technology,
@@ -73,11 +65,11 @@
             percussion techniques involved in their removal during manufacturing
             of new projectile points.  Such flakes are pictured here from
             the Gault Site.</p>
-          <%= image_tag("figure11.jpg", class: "welcome-image", alt: "Flake Debris") %>
+          <%= image_tag("Figure11.jpg", class: "welcome-image", alt: "Flake Debris") %>
         </div>
       </div>
       <div class="content-box">
-        <div class="col-md-6">
+        <div class="col-md-5 padded">
           <p><b>Preforms </b>are an early stage in the sequence of stone tool
             production that establish the size, shape and contours supportive
             to the final lance or projectile point form.  Preforms associated

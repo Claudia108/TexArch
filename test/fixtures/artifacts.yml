@@ -8,6 +8,10 @@ one:
   max_width: 432
   basal_edge_width: 203
   site: one
+  image_file_name: landscape.jpg
+  image_content_type: image/jpg
+  image_file_size: 1273812
+  image_updated_at: 2016-06-14 20:02:06
 
 two:
   ui: 8766
@@ -17,6 +21,10 @@ two:
   max_width: 11
   basal_edge_width: 123
   site: one
+  image_file_name: landscape.jpg
+  image_content_type: image/jpg
+  image_file_size: 1273812
+  image_updated_at: 2016-06-14 20:02:06
 
 
 three:
@@ -27,6 +35,10 @@ three:
   max_width: 623
   basal_edge_width: 43
   site: two
+  image_file_name: landscape.jpg
+  image_content_type: image/jpg
+  image_file_size: 1273812
+  image_updated_at: 2016-06-14 20:02:06
 
 four:
   ui: 3456
@@ -36,6 +48,10 @@ four:
   max_width: 432
   basal_edge_width: 203
   site: one
+  image_file_name: landscape.jpg
+  image_content_type: image/jpg
+  image_file_size: 1273812
+  image_updated_at: 2016-06-14 20:02:06
 
 five:
   ui: 9766
@@ -45,6 +61,10 @@ five:
   max_width: 11
   basal_edge_width: 123
   site: two
+  image_file_name: landscape.jpg
+  image_content_type: image/jpg
+  image_file_size: 1273812
+  image_updated_at: 2016-06-14 20:02:06
 
 six:
   ui: 1923
@@ -54,3 +74,7 @@ six:
   max_width: 623
   basal_edge_width: 43
   site: two
+  image_file_name: landscape.jpg
+  image_content_type: image/jpg
+  image_file_size: 1273812
+  image_updated_at: 2016-06-14 20:02:06

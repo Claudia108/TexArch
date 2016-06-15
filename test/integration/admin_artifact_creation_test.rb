@@ -75,13 +75,13 @@ class AdminArtifactCreationTest < ActionDispatch::IntegrationTest
 
   test "deleting an artifact" do
     admin = admin_login
-    artifact = Artifact.first
+    artifact = Artifact.find_by(point_type: "Andice")
 
     assert_equal '/admin/dashboard', current_path
     assert page.has_content?("#{admin.first_name}, welcome to your dashboard")
-    click_link("Artifacts")
+    click_link("Andice")
 
-    assert_equal admin_artifacts_path, current_path
+    assert_equal admin_points_path("Andice"), current_path
     assert page.has_content?(artifact.ui)
 
     visit admin_artifact_path(artifact.id)

@@ -1,7 +1,18 @@
 class Artifact < ActiveRecord::Base
   belongs_to :site
-  has_attached_file :image, styles: { medium: "600x600>", thumb: "300x300>" }, default_url: "/images/rails.png"
+
+  has_attached_file :image, styles: {
+      medium: ["600x600>", :jpg],
+      thumb: ["300x300>", :jpg]
+    },
+    default_url: "/images/landscape.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
-  # validates_attachment_content_type :image, { content_type: ["image/jpeg", "image/gif", "image/png", "image/tif"] }
+
   validates :point_type, presence: true
+  validates :ui, presence: true, numericality: { only_integer: true }
+  validates :max_thickness, presence: true, numericality: { only_integer: true }
+  validates :max_length, presence: true, numericality: { only_integer: true }
+  validates :max_width, presence: true, numericality: { only_integer: true }
+  validates :basal_edge_width, presence: true, numericality: { only_integer: true }
+  validates :site_id, presence: true
 end

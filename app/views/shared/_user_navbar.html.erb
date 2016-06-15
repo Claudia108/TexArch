@@ -8,10 +8,9 @@
     <li class="dropdown">
       <a id="dLabel" data_target="#" href="/artifacts" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Artifacts<span class="caret"></span></a>
       <ul class="dropdown-menu" area-labelledby="dLabel">
-        <li><a href="/artifacts/andice">Andice Points</a></li>
-        <li><a href="/artifacts/bell">Bell Points</a></li>
-        <li><a href="/artifacts/calf_creek">Calf Creek Points</a></li>
-        <li role="separator" class="divider"></li>
+        <li><%= link_to "Andice Points", points_path("Andice") %> </li>
+        <li><%= link_to "Bell Points", points_path("Bell") %> </li>
+        <li><%= link_to "Calf Creek Points", points_path("Calf Creek") %> </li>
       </ul>
     </li>
   </ul>

@@ -13,10 +13,17 @@ function renderMap() {
   });
 }
 
+var centerPoint = { lat: 39.50, lng: -98.35 };
+var zoom = 4;
+
+var resetMap = function(map) {
+  map.setZoom(zoom);
+  map.setCenter(centerPoint);
+}
+
 var initMap = function(response) {
-  var centerPoint = {lat: 39.50, lng: -98.35};
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
+    zoom: zoom,
     center: centerPoint,
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
@@ -51,9 +58,10 @@ var initMap = function(response) {
           map.setCenter(marker.getPosition());
           infowindow.open(map, marker);
         });
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
+        google.maps.event.addListener(infowindow,'closeclick',function(){
+          resetMap(map);
         });
+
       });
     }
   }

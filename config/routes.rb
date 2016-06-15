@@ -9,23 +9,19 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/map', to: 'map#show', as: :map
+
   namespace :admin do
     get '/dashboard', to: 'users#show', as: :dashboard
-    get '/artifacts/andice', to: 'artifacts#andice', as: :andice
-    get '/artifacts/bell', to: 'artifacts#bell', as: :bell
-    get '/artifacts/calf_creek', to: 'artifacts#calf_creek', as: :calf_creek
-    resources :artifacts
+
+    resources :artifacts, only: [:new, :create, :show, :edit, :update, :destroy]
     resources :sites
+    get '/:point_type', to: 'artifacts#index', as: :points
   end
 
-  get '/artifacts/andice', to: 'artifacts#andice', as: :andice
-  get '/artifacts/bell', to: 'artifacts#bell', as: :bell
-  get '/artifacts/calf_creek', to: 'artifacts#calf_creek', as: :calf_creek
   resources :artifacts, only: [:show]
-
   resources :sites, only: [:show, :index]
-
-  get '/map', to: 'map#show', as: :map
+  get '/:point_type', to: 'artifacts#index', as: :points
 
   get '/auth/google_oauth2', as: :google_login
   get '/auth/google_oauth2/callback', to: 'sessions#create'

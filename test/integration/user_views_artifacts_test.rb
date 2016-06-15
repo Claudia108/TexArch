@@ -15,11 +15,14 @@ class UserLoginTest < ActionDispatch::IntegrationTest
       click_link("Andice Points")
     end
 
-    assert_equal andice_path, current_path
-    assert page.has_content?("Artifact Point Type: Andice")
-    assert_equal 2, andice.count
-    refute page.has_content?("Artifact Point Type: Bell")
-    refute page.has_content?("Artifact Point Type: Calf Creek")
+    assert_equal points_path("Andice"), current_path
+
+    within("#table-#{andice.first.id}") do
+      assert page.has_content?("Andice")
+      assert_equal 2, andice.count
+      refute page.has_content?("Bell")
+      refute page.has_content?("Calf Creek")
+    end
   end
 
   test "user can view bell points" do
@@ -31,11 +34,14 @@ class UserLoginTest < ActionDispatch::IntegrationTest
       click_link("Bell Points")
     end
 
-    assert_equal bell_path, current_path
-    assert page.has_content?("Artifact Point Type: Bell")
-    assert_equal 2, bell.count
-    refute page.has_content?("Artifact Point Type: Andice")
-    refute page.has_content?("Artifact Point Type: Calf Creek")
+    assert_equal points_path("Bell"), current_path
+
+    within("#table-#{bell.first.id}") do
+      assert page.has_content?("Bell")
+      assert_equal 2, bell.count
+      refute page.has_content?("Andice")
+      refute page.has_content?("Calf Creek")
+    end
   end
 
   test "user can view Calf Creek points" do
@@ -47,10 +53,29 @@ class UserLoginTest < ActionDispatch::IntegrationTest
       click_link("Calf Creek Points")
     end
 
-    assert_equal calf_creek_path, current_path
+    assert_equal points_path("Calf Creek"), current_path
+
     assert page.has_content?("All Calf Creek Points")
     assert_equal 2, calf_creek.count
     refute page.has_content?("Artifact Point Type: Andice")
     refute page.has_content?("Artifact Point Type: Bell")
+  end
+
+  test "user views single artifact" do
+    login_user
+    artifact = Artifact.find_by(point_type: "Bell")
+
+    visit '/calf_creek_horizon'
+    within('#artifact-links') do
+      click_link("Bell Points")
+    end
+    assert_equal points_path("Bell"), current_path
+    find("#image-#{artifact.id}").click
+
+    assert_equal artifact_path(artifact.id), current_path
+    assert page.has_content?("Point Type")
+    assert page.has_content?("Bell")
+    assert page.has_content?("1456")
+    assert page.has_content?("1003")
   end
 end
