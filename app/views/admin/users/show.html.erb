@@ -1,5 +1,8 @@
 <h1> <%= @admin.first_name %>, welcome to your dashboard</h1>
-<div class="link">
-  <p><%= link_to "Add a new Artifact", new_admin_artifact_path %></p>
-  <p><%= link_to "Add a new Site", new_admin_site_path %></p>
+
+<div class="list-group">
+  <%= link_to "Add a new Artifact", new_admin_artifact_path,
+      class: "list-group-item" %>
+  <%= link_to "Add a new Site", new_admin_site_path,
+      class: "list-group-item" %>
 </div>

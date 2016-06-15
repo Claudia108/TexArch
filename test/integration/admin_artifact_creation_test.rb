@@ -27,7 +27,7 @@ class AdminArtifactCreationTest < ActionDispatch::IntegrationTest
 
     click_button("Add Artifact")
 
-    assert_equal admin_artifact_path(Artifact.last.id), current_path
+    assert_equal artifact_path(Artifact.last.id), current_path
     assert page.has_content?("Point Type")
     assert page.has_content?("Andice")
     assert page.has_css?("img[src*='andice.jpg']")
@@ -55,7 +55,7 @@ class AdminArtifactCreationTest < ActionDispatch::IntegrationTest
     attach_file("artifact[image]", 'app/assets/images/andice.jpg')
     click_button("Add Artifact")
 
-    assert_equal admin_artifact_path(Artifact.last.id), current_path
+    assert_equal artifact_path(Artifact.last.id), current_path
     click_link("Edit")
     assert_equal edit_admin_artifact_path(Artifact.last.id), current_path
 
@@ -66,7 +66,7 @@ class AdminArtifactCreationTest < ActionDispatch::IntegrationTest
 
     click_button("Update Artifact")
 
-    assert_equal admin_artifact_path(Artifact.last.id), current_path
+    assert_equal artifact_path(Artifact.last.id), current_path
     assert page.has_content?("Point Type")
     assert page.has_content?("Andice")
     assert page.has_content?("#{new_site.name}")
@@ -75,19 +75,19 @@ class AdminArtifactCreationTest < ActionDispatch::IntegrationTest
 
   test "deleting an artifact" do
     admin = admin_login
-    artifact = Artifact.find_by(point_type: "Andice")
+    artifacts = Artifact.where(point_type: "Andice")
 
     assert_equal '/admin/dashboard', current_path
     assert page.has_content?("#{admin.first_name}, welcome to your dashboard")
     click_link("Andice")
 
-    assert_equal admin_points_path("Andice"), current_path
-    assert page.has_content?(artifact.ui)
+    assert_equal points_path("Andice"), current_path
+    assert page.has_content?(artifacts.last.ui)
 
-    visit admin_artifact_path(artifact.id)
+    visit artifact_path(artifacts.last.id)
     click_link("Delete")
     assert_equal admin_artifacts_path, current_path
 
-    refute page.has_content?(artifact.ui)
+    refute page.has_content?(artifacts.last.ui)
   end
 end

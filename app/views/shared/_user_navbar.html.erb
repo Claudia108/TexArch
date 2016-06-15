@@ -11,10 +11,17 @@
         <li><%= link_to "Andice Points", points_path("Andice") %> </li>
         <li><%= link_to "Bell Points", points_path("Bell") %> </li>
         <li><%= link_to "Calf Creek Points", points_path("Calf Creek") %> </li>
+        <% if admin_authenticated %>
+          <li role="separator" class="divider"></li>
+          <li><a href="/admin/artifacts/new">Add an Artifact</a></li>
+        <% end %>
       </ul>
     </li>
   </ul>
   <ul class="nav navbar-nav navbar-right">
+    <% if admin_authenticated %>
+      <li><%= link_to "Dashboard", admin_dashboard_path %></li>
+    <% end %>
     <li><a href="#">Welcome <%= current_user.first_name %></a></li>
     <li><%= link_to "Logout", logout_path, method: :delete %></li>
   </ul>

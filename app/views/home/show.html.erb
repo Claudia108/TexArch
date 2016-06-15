@@ -18,7 +18,7 @@
           with the CCH and have been found in Arkansas, Kansas, Missouri,
           Oklahoma and Texas, and there is limited evidence in Colorado,
           New Mexico, northern Tamaulipas, and Utah.<br>
-          <%= link_to "Learn more", cch_info_path %></p>
+          <%= link_to "Learn more", cch_info_path, class: "btn btn-primary" %></p>
 
         <div id="artifact-links">
           <%= image_tag("Figure14.jpg", class: "welcome-image", alt: "Projectile Points" ) %>
@@ -26,9 +26,7 @@
           <div class="row" id="point-button">
             <div class="col-md-1">
             </div>
-            <% if current_user && current_user.admin? %>
-              <%= render partial: "shared/admin_nav_buttons" %>
-            <% elsif current_user %>
+            <% if current_user %>
               <%= render partial: "shared/user_nav_buttons", locals: { path: "points_path(:point_type)" } %>
             <% else %>
               <div class="col-md-12">
