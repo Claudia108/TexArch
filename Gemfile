@@ -43,6 +43,7 @@ group :development, :test do
   gem 'capybara'
   gem "pry", :require => "pry"
   gem 'launchy'
+  gem 'teaspoon-mocha'
 end
 
 group :development do

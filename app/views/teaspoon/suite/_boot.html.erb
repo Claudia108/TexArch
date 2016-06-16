@@ -1,0 +1,6 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["google_api_key"] %>&callback=initMap"
+async defer></script>
+<%= javascript_include_tag *@suite.spec_assets, debug: @suite.config.expand_assets, allow_non_precompiled: true %>
+<script type="text/javascript">
+  Teaspoon.onWindowLoad(Teaspoon.execute);
+</script>
