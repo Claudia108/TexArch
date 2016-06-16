@@ -13,14 +13,16 @@
         </tr>
       </thead>
       <tbody>
-      <% @users.each do |user| %>
-        <tr>
-          <td> <%= user.id %></td>
-          <td> <%= user.first_name %></td>
-          <td> <%= user.last_name %></td>
-          <td> <%= user.email %></td>
-          <td> <%= user.first_visit %></td>
-        </tr>
+      <% cache cache_key_for(User, "list") do %>
+        <% @users.each do |user| %>
+          <tr>
+            <td> <%= user.id %></td>
+            <td> <%= user.first_name %></td>
+            <td> <%= user.last_name %></td>
+            <td> <%= user.email %></td>
+            <td> <%= user.first_visit %></td>
+          </tr>
+        <% end %>
       <% end %>
       </tbody>
     </table>

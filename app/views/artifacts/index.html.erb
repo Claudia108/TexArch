@@ -5,27 +5,28 @@
 <% end %>
 
 <div class="row">
-  <% @artifacts.each do |artifact| %>
-    <div class="col-md-4 index-height">
-      <table class="table table-striped" id="table-<%= artifact.id %>">
-        <tbody>
-          <tr>
-            <th>Artifact UI</th>
-            <td><%= artifact.ui %></td>
-          </tr>
-          <tr>
-            <th>Point Type</th>
-            <td><%= artifact.point_type %></td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="centered">
-      <%= link_to image_tag(artifact.image.url(:thumb), class: "img-rounded index-image"),
-      artifact_path(artifact.id),
-        id: "image-#{artifact.id}" %>
+  <% cache cache_key_for(Artifact, "list") do %>
+    <% @artifacts.each do |artifact| %>
+      <div class="col-md-4 index-height">
+        <table class="table table-striped" id="table-<%= artifact.id %>">
+          <tbody>
+            <tr>
+              <th>Artifact UI</th>
+              <td><%= artifact.ui %></td>
+            </tr>
+            <tr>
+              <th>Point Type</th>
+              <td><%= artifact.point_type %></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="centered">
+        <%= link_to image_tag(artifact.image.url(:thumb), class: "img-rounded index-image"),
+        artifact_path(artifact.id),
+          id: "image-#{artifact.id}" %>
+        </div>
       </div>
-    </div>
-
+    <% end %>
   <% end %>
 </div>
 <div class="clearfix visible-xs-block"></div>
