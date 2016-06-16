@@ -8,10 +8,15 @@ class Admin::ArtifactsController < Admin::BaseController
     @artifact = Artifact.new(artifact_params)
     if @artifact.save
       flash[:notice] = "Artifact with UI #{@artifact.ui} created!"
-      redirect_to artifact_path(@artifact.id)
+      if artifact_params[:point_type] == "Calf Creek"
+        @calf_creek = Artifact.where(point_type: "Calf Creek")
+        render :calf_creek
+      else
+        redirect_to artifact_path(@artifact.id)
+      end
     else
-      flash[:alert] = "Data is missing or invalid! Try again"
-      redirect_to new_admin_artifact_path
+    flash[:alert] = "Data is missing or invalid! Try again"
+    redirect_to new_admin_artifact_path
     end
   end
 
