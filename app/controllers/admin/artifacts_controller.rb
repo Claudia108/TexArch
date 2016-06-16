@@ -8,10 +8,10 @@ class Admin::ArtifactsController < Admin::BaseController
     @artifact = Artifact.new(artifact_params)
     if @artifact.save
       flash[:notice] = "Artifact with UI #{@artifact.ui} created!"
-      redirect_to artifact_path(@artifact.id)
+      show_conditions
     else
-      flash[:alert] = "Data is missing or invalid! Try again"
-      redirect_to new_admin_artifact_path
+    flash[:alert] = "Data is missing or invalid! Try again"
+    redirect_to new_admin_artifact_path
     end
   end
 
@@ -23,7 +23,7 @@ class Admin::ArtifactsController < Admin::BaseController
     @artifact = Artifact.find(params[:id])
     if @artifact.update_attributes(artifact_params)
       flash[:alert] = "Artifact with UI #{@artifact.ui} updated!"
-      redirect_to artifact_path(@artifact.id)
+      show_conditions
     else
       flash[:alert] = "Data is missing or invalid! Try again"
       redirect_to edit_admin_artifact_path(@artifact)
@@ -42,5 +42,14 @@ class Admin::ArtifactsController < Admin::BaseController
   def artifact_params
     params.require(:artifact).permit(:id, :ui, :point_type, :max_width, :max_length,
                   :max_thickness, :basal_edge_width, :site_id, :image)
+  end
+
+  def show_conditions
+    if artifact_params[:point_type] == "Calf Creek"
+      @calf_creek = Artifact.where(point_type: "Calf Creek")
+      render :calf_creek
+    else
+      redirect_to artifact_path(@artifact.id)
+    end
   end
 end
