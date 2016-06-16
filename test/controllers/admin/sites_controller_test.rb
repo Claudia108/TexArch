@@ -9,10 +9,4 @@ class Admin::SitesControllerTest < ActionController::TestCase
     assert site.has_attribute?("name")
     assert site.has_attribute?("longitude")
   end
-
-  # test "should get create" do
-  #   get :create
-  #   assert_response :success
-  # end
-
 end
