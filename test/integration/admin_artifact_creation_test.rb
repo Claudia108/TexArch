@@ -110,6 +110,33 @@ class AdminArtifactCreationTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Data is missing or invalid! Try again")
   end
 
+  test "redirects to calf creek index page when creating calf creek artifact" do
+    admin = admin_login
+    site = Site.first
+
+    assert_equal '/admin/dashboard', current_path
+    assert page.has_content?("#{admin.first_name}, welcome to your dashboard")
+
+    click_link("Add a new Artifact")
+    assert_equal new_admin_artifact_path, current_path
+
+    fill_in "artifact[ui]", with: "17"
+    fill_in "artifact[max_length]", with: "1500"
+    fill_in "artifact[max_thickness]", with: "47"
+    fill_in "artifact[max_width]", with: "700"
+    fill_in "artifact[basal_edge_width]", with: "12"
+    select(site.name, from: "artifact[site_id]")
+    select("Calf Creek", from: "artifact[point_type]")
+    attach_file("artifact[image]", 'app/assets/images/andice.jpg')
+
+    click_button("Add Artifact")
+
+    assert_equal admin_artifacts_path, current_path
+    assert page.has_content?("Artifact with UI #{Artifact.last.ui} created!")
+    assert page.has_content?(Artifact.last.max_length)
+    assert page.has_content?("All Calf Creek Points")
+  end
+
   test "updating an artifact" do
     admin = admin_login
     site = Site.first
