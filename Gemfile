@@ -44,7 +44,6 @@ group :development, :test do
   gem "pry", :require => "pry"
   gem 'launchy'
   gem 'teaspoon-mocha'
-  # gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
 end
 
 group :development do
