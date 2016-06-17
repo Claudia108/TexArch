@@ -19,18 +19,6 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  # Shoulda::Matchers.configure do |config|
-  #   config.integrate do |with|
-  #     with.test_framework :minitest
-  #     with.test_framework :minitest_4
-  #     with.test_framework :test_unit
-  #
-  #     # Or, choose the following (which implies all of the above):
-  #     with.library :rails
-  #   end
-  # end
-
-
   def stub_omniauth
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({

@@ -18,7 +18,6 @@
         </tr>
       </thead>
       <tbody>
-      <% cache cache_key_for(Artifact, "list") do %>
         <% @calf_creek.each do |calf_creek| %>
           <tr>
             <td> <%= calf_creek.ui %></td>
@@ -35,7 +34,6 @@
           </tr>
           <% end %>
         <% end %>
-      <% end %>
       </tbody>
     </table>
   </div>
