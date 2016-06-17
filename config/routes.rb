@@ -22,8 +22,8 @@ Rails.application.routes.draw do
   end
 
   resources :artifacts, only: [:show]
-  get '/:point_type', to: 'artifacts#index', as: :points
   resources :sites, only: [:show, :index]
+  get '/:point_type', to: 'artifacts#index', as: :points
 
   get '/auth/google_oauth2', as: :google_login
   get '/auth/google_oauth2/callback', to: 'sessions#create'

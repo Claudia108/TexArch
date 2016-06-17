@@ -5,7 +5,6 @@
 <% end %>
 
 <div class="row">
-  <% cache cache_key_for(Artifact, "list") do %>
     <% @artifacts.each do |artifact| %>
       <div class="col-md-4 index-height">
         <table class="table table-striped" id="table-<%= artifact.id %>">
@@ -27,6 +26,5 @@
         </div>
       </div>
     <% end %>
-  <% end %>
 </div>
 <div class="clearfix visible-xs-block"></div>
