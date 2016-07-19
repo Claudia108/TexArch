@@ -33,7 +33,7 @@ class Admin::SitesController < Admin::BaseController
   private
 
   def site_params
-    params.require(:site).permit(:name, :longitude, :latitude, :site_type)
+    params.require(:site).permit(:name, :description, :trinominal, :longitude, :latitude, :site_type, :image)
   end
 
 end

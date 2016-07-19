@@ -10,6 +10,16 @@
       </fieldset>
 
       <fieldset class="form-group col-md-6">
+        <%= f.label :trinominal %>
+        <%= f.text_field :trinominal, class: "form-control number" %>
+      </fieldset>
+
+      <fieldset class="form-group col-md-6">
+        <%= f.label :description %>
+        <%= f.text_field :description, class: "form-control number" %>
+      </fieldset>
+
+      <fieldset class="form-group col-md-6">
         <%= f.label :longitude %>
         <%= f.text_field :longitude, class: "form-control text", placeholder: "Input as decimal, like this: -97.70975" %>
       </fieldset>
@@ -17,6 +27,10 @@
       <fieldset class="form-group col-md-6">
         <%= f.label :latitude %>
         <%= f.text_field :latitude, class: "form-control", placeholder: "Input as decimal, like this: 30.89225" %>
+      </fieldset>
+
+      <fieldset class="form-group col-md-6">
+        <%= f.file_field :image, class: "form-control-file"%>
       </fieldset>
 
       <div class="c-input c-radio col-md-3 radio-button-line" id="radio1">

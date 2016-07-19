@@ -4,16 +4,34 @@ one:
   longitude: -97.70975
   latitude: 30.89225
   name: Gault Site
+  trinominal: WVF123
+  description: This site is located in N-Texas.
+  image_file_name: landscape.jpg
+  image_content_type: image/jpg
+  image_file_size: 1273812
+  image_updated_at: 2016-06-14 20:02:06
   site_type: 0
 
 two:
   longitude: 39.50
   latitude: -98.35
   name: Center US
+  trinominal: XYZ123
+  description: Explore the center of the US.
+  image_file_name: landscape.jpg
+  image_content_type: image/jpg
+  image_file_size: 1273812
+  image_updated_at: 2016-06-14 20:02:06
   site_type: 1
 
 three:
   longitude: -104.9847000
   latitude: 39.7391500
   name: Denver
+  trinominal: ABC123
+  description: This site is is a lot of fun.
+  image_file_name: landscape.jpg
+  image_content_type: image/jpg
+  image_file_size: 1273812
+  image_updated_at: 2016-06-14 20:02:06
   site_type: 1
