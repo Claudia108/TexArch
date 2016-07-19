@@ -30,13 +30,6 @@ class Admin::SitesController < Admin::BaseController
     end
   end
 
-  # def destroy
-  #   site = Site.find(params[:id])
-  #   flash[:alert] = "Site and its Artifacts Deleted!"
-  #   site.destroy
-  #   redirect_to sites_path
-  # end
-
   private
 
   def site_params

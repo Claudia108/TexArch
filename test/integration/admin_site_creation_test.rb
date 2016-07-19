@@ -121,26 +121,20 @@ class AdminSiteCreationTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Data is missing or invalid! Try again")
   end
 
-  # test "deleting a site" do
-  #   admin = admin_login
-  #   site = Site.first
-  #
-  #   assert_equal '/admin/dashboard', current_path
-  #   click_link("Sites")
-  #   assert_equal sites_path, current_path
-  #
-  #   click_link(site.name)
-  #   assert_equal site_path(site.id), current_path
-  #   assert page.has_content?(site.name)
-  #   assert page.has_content?(site.longitude)
-  #   assert page.has_content?(site.latitude)
-  #
-  #   click_link("Delete")
-  #   assert_equal sites_path, current_path
-  #   assert page.has_content?("Site and its Artifacts Deleted!")
-  #
-  #   refute page.has_content?(site.name)
-  #   refute page.has_content?(site.longitude)
-  #   refute page.has_content?(site.latitude)
-  # end
+  test "admin cannot delete a site" do
+    admin = admin_login
+    site = Site.first
+
+    assert_equal '/admin/dashboard', current_path
+    click_link("Sites")
+    assert_equal sites_path, current_path
+
+    click_link(site.name)
+    assert_equal site_path(site.id), current_path
+    assert page.has_content?(site.name)
+    assert page.has_content?(site.longitude)
+    assert page.has_content?(site.latitude)
+
+    refute page.has_link?("Delete")
+  end
 end

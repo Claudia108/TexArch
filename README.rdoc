@@ -17,7 +17,7 @@ The application introduces to the research, displays artifacts data and images a
   * to run the app locally: rails s
   * visit http://localhost:3000/
 
-* Database: postgresql
+* Database: PostgreSQL
   * access database: rails c
 
 * Database initialization
