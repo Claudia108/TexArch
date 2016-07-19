@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index]
 
     resources :artifacts, only: [:new, :create, :edit, :update, :destroy]
-    resources :sites, only: [:new, :create, :edit, :update, :destroy]
+    resources :sites, only: [:new, :create, :edit, :update]
   end
 
   resources :artifacts, only: [:show]

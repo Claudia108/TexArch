@@ -1,28 +1,32 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### Introduction
+TexArch is an online tool hosting data supportive to archaeological research of Sergio Ayala at Gault School of Archaeological Research in San Marcos, TX.
+The application introduces to the research, displays artifacts data and images and shows sites on a dynamic google map.
 
-Things you may want to cover:
-
-* Ruby version
+##### Getting started
 
 * System dependencies
+  * Rails ~> 4.2.6
+  * Ruby > 2.3.0
 
 * Configuration
+  * git clone git@github.com:Claudia108/TexArch.git
+  * cd TexArch
+  * bundle install
+  * to run the app locally: rails s
+  * visit http://localhost:3000/
 
-* Database creation
+* Database: postgresql
+  * access database: rails c
 
 * Database initialization
+  * rake db:reset
 
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+  * rake test
 
 * Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  * Deployed app: https://texarch.herokuapp.com
+  * git push heroku master
+  * heroku run bundle exec rake db:migrate
