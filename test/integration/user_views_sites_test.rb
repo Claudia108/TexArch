@@ -29,8 +29,11 @@ class UserLoginTest < ActionDispatch::IntegrationTest
 
     assert_equal site_path(site.id), current_path
     assert page.has_content?(site.name)
+    assert page.has_content?(site.trinominal)
+    assert page.has_content?(site.description)
     assert page.has_content?(site.longitude)
     assert page.has_content?(site.latitude)
     assert page.has_content?(site.site_type)
+    assert page.has_css?("img[src*='landscape.jpg']")
   end
 end

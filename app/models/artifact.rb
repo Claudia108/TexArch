@@ -6,6 +6,7 @@ class Artifact < ActiveRecord::Base
       thumb: ["300x300>", :jpg]
     },
     default_url: "/images/landscape.jpg"
+
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   validates :point_type, presence: true

@@ -1,39 +1,58 @@
 <h2> <%= @site.name %> </h2>
 
-<div class="col-md-6">
-  <table class="table table-striped col-md-6">
-    <thead>
-      <tr>
-        <th>Site Attributes</th>
-        <th>Coordinates</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Site Name</td>
-        <td><%= @site.name %></td>
-      </tr>
-      <tr>
-        <td>Longitude</td>
-        <td> <%= @site.longitude %></td>
-      </tr>
-      <tr>
-        <td>Latitude</td>
-        <td> <%= @site.latitude %></td>
-      </tr>
-      <tr>
-        <td>Site Type</td>
-        <td> <%= @site.site_type %></td>
-      </tr>
-      <% if admin_authenticated %>
+<div class="row">
+
+  <div class="col-md-5">
+    <table class="table table-striped">
+      <thead>
         <tr>
-          <td colspan=2>
-            <%= link_to "Edit Site", edit_admin_site_path(@site.id), class: "btn btn-primary" %>
-            <%= link_to "Delete Site", admin_site_path(@site.id), method: :delete, class: "btn btn-primary" %>
-          </td>
+          <th colspan=2>Site Attributes</th>
+          <th></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= link_to "See Map for Location", map_path, class: "btn btn-primary" %>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td><%= @site.name %></td>
+        </tr>
+        <tr>
+          <td>Trinominal</td>
+          <td><%= @site.trinominal %></td>
+        </tr>
+        <tr>
+          <td>Longitude</td>
+          <td> <%= @site.longitude %></td>
+        </tr>
+        <tr>
+          <td>Latitude</td>
+          <td> <%= @site.latitude %></td>
+        </tr>
+        <tr>
+          <td>Site Type</td>
+          <td> <%= @site.site_type %></td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td><%= @site.description %></td>
+        </tr>
+
+        <% if admin_authenticated %>
+          <tr>
+            <td colspan=2>
+              <%= link_to "Edit Site", edit_admin_site_path(@site.id), class: "btn btn-primary" %>
+            </td>
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+    <%= link_to "See Map for Location", map_path, class: "btn btn-primary" %>
+  </div>
+
+  <div class="image-fluid img-rounded col-md-6">
+      <%= image_tag @site.image.url(:medium),
+        alt: "Site Image",
+        class: "img-rounded site-image" %>
+  </div>
+
 </div>

@@ -53,17 +53,22 @@ var initMap = function(response) {
         var infowindow = new google.maps.InfoWindow({
           content: contentString
         });
+
+        marker.addListener('mouseover', function () {
+          infowindow.open(map, marker);
+        });
+
         marker.addListener('click', function() {
           map.setZoom(10);
           map.setCenter(marker.getPosition());
           infowindow.open(map, marker);
         });
+
         google.maps.event.addListener(infowindow,'closeclick',function(){
           resetMap(map);
         });
-
       });
     }
-  }
+  };
   setMarkers(response);
-}
+};

@@ -30,17 +30,10 @@ class Admin::SitesController < Admin::BaseController
     end
   end
 
-  def destroy
-    site = Site.find(params[:id])
-    flash[:alert] = "Site and its Artifacts Deleted!"
-    site.destroy
-    redirect_to sites_path
-  end
-
   private
 
   def site_params
-    params.require(:site).permit(:name, :longitude, :latitude, :site_type)
+    params.require(:site).permit(:name, :description, :trinominal, :longitude, :latitude, :site_type, :image)
   end
 
 end

@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :store_location
+
   helper_method :current_user,
                 :admin_authenticated,
                 :require_user
@@ -19,4 +21,9 @@ class ApplicationController < ActionController::Base
   def require_user
     render file: '/public/404' unless current_user
   end
+
+  def store_location
+    session[:previous_url] = request.fullpath
+  end
+
 end
