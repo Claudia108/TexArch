@@ -1,10 +1,10 @@
 == README
 
-##### Introduction
+#### Introduction
 TexArch is an online tool hosting data supportive to archaeological research of Sergio Ayala at Gault School of Archaeological Research in San Marcos, TX.
 The application introduces to the research, displays artifacts data and images and shows sites on a dynamic google map.
 
-##### Getting started
+#### Getting started
 
 * System dependencies
   * Rails ~> 4.2.6
