@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :store_location
+
   def create
     if user = User.from_omniauth(request.env["omniauth.auth"])
       session[:user_id] = user.id
