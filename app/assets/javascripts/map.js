@@ -58,11 +58,11 @@ var initMap = function(response) {
           infowindow.open(map, marker);
         });
 
-        if(map.zoom === 4){
           marker.addListener('mouseout', function () {
-            infowindow.close();
+            if(map.zoom === 4) {
+              infowindow.close();
+            }
           });
-        }
 
 
         marker.addListener('click', function() {
