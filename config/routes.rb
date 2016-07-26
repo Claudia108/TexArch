@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
   get '/map', to: 'map#show', as: :map
 
+  get '/auth/google_oauth2', as: :google_login
+  get '/auth/google_oauth2/callback', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy', as: :logout
+
   namespace :admin do
     get '/dashboard', to: 'users#show', as: :dashboard
     resources :users, only: [:index]
@@ -20,12 +24,9 @@ Rails.application.routes.draw do
     resources :artifacts, only: [:new, :create, :edit, :update, :destroy]
     resources :sites, only: [:new, :create, :edit, :update]
   end
-  get '/logout', to: 'sessions#destroy', as: :logout
 
   resources :artifacts, only: [:show]
   resources :sites, only: [:show, :index]
   get '/:point_type', to: 'artifacts#index', as: :points
 
-  get '/auth/google_oauth2', as: :google_login
-  get '/auth/google_oauth2/callback', to: 'sessions#create'
 end

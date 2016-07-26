@@ -45,6 +45,7 @@ group :development, :test do
   gem "pry", :require => "pry"
   gem 'launchy'
   gem 'teaspoon-mocha'
+  gem 'selenium-webdriver'
 end
 
 group :development do
