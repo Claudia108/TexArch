@@ -1,5 +1,5 @@
 class Admin::ArtifactsController < Admin::BaseController
-
+  
   def new
     @artifact = Artifact.new
   end

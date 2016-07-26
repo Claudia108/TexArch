@@ -4,10 +4,23 @@
   <div class="row">
     <div class="content-box">
       <div class="col-md-7">
+        <!-- <article>
+          <p>The CCH (6,000 - 5,800 BP) is an Early-Middle Archaic interval when
+            foragers and bison hunters of the Southern Plains invested a great
+            deal of time and skill in producing some of the more complex projectile
+            points and notching technology in the archaeological record of
+            North America.</p>
 
+          <p>The Calf Creek, Andice, and Bell projectile points are associated
+            with the CCH and have been found in Arkansas, Kansas, Missouri,
+            Oklahoma and Texas, and there is limited evidence in Colorado,
+            New Mexico, northern Tamaulipas, and Utah.<br>
+            <%= link_to "Learn more...", info_index_path, class: "btn btn-primary" %></p>
+            <%= image_tag("Figure14.jpg", class: "welcome-image img-rounded", alt: "Projectile Points" ) %>
+        </article> -->
         <%= react_component('CalfCreek') %>
-
         <div id="artifact-links">
+
           <div class="row" id="point-button">
             <div class="col-md-1">
             </div>
@@ -36,6 +49,7 @@
     </div>
     <div class="row">
         <%= react_component('FlakeDebris') %>
+
         <%= react_component('Preforms') %>
     </div>
   </div>

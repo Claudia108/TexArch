@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :artifacts, only: [:new, :create, :edit, :update, :destroy]
     resources :sites, only: [:new, :create, :edit, :update]
   end
+  get '/logout', to: 'sessions#destroy', as: :logout
 
   resources :artifacts, only: [:show]
   resources :sites, only: [:show, :index]
@@ -27,5 +28,4 @@ Rails.application.routes.draw do
 
   get '/auth/google_oauth2', as: :google_login
   get '/auth/google_oauth2/callback', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy', as: :logout
 end
