@@ -4,7 +4,7 @@ describe("Using fixtures", function() {
   var server;
   var sites = [{ id: 1, name: "Gault Site",
                 longitude: "65.4440",
-                latitude: "-34.5667788" }]
+                latitude: "-34.5667788" }];
 
   beforeEach(function() {
     originalInitMap = window.initMap;
@@ -21,11 +21,11 @@ describe("Using fixtures", function() {
         initMapSites = null;
 
     // expect(true).to.eq(true);
-    window.renderMap()
+    window.renderMap();
     window.initMap = function(sites) {
       initMapCalled = true;
       initMapSites = sites;
-    }
+    };
 
     server.requests[0].respond(
         200,
@@ -34,6 +34,6 @@ describe("Using fixtures", function() {
     );
 
     expect(initMapCalled).to.eq(true);
-    expect(initMapSites).to.eql(sites)
-  })
-})
+    expect(initMapSites).to.eql(sites);
+  });
+});

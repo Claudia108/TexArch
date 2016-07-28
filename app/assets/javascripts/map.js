@@ -19,7 +19,7 @@ var zoom = 4;
 var resetMap = function(map) {
   map.setZoom(zoom);
   map.setCenter(centerPoint);
-}
+};
 
 var initMap = function(response) {
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -31,7 +31,7 @@ var initMap = function(response) {
   var setMarkers = function(response) {
     if (typeof response !== "undefined") {
       response.forEach(function(site) {
-        var coordinates = { lng: parseFloat(site.longitude), lat: parseFloat(site.latitude) }
+        var coordinates = { lng: parseFloat(site.longitude), lat: parseFloat(site.latitude) };
         var marker = new google.maps.Marker({
           position: coordinates,
           map: map,
@@ -41,9 +41,9 @@ var initMap = function(response) {
         var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">' + site.name +'</h1>'+
+            '<h1 id="firstHeading" class="firstHeading">' + site.name + '</h1>'+
             '<div id="bodyContent">'+
-            // '<p><b>The' + site.name + '</b>: ' + site.name + '</p>'+
+            '<p>' + site.description + '</p>' +
             '<p>Information: <a href="http://www.gaultschool.org/Home.aspx", target="_blank">' +
             'http://www.gaultschool.org/Home.aspx' +
             '</a></p>'+
@@ -58,8 +58,15 @@ var initMap = function(response) {
           infowindow.open(map, marker);
         });
 
+          marker.addListener('mouseout', function () {
+            if(map.zoom === 4) {
+              infowindow.close();
+            }
+          });
+
+
         marker.addListener('click', function() {
-          map.setZoom(10);
+          map.setZoom(11);
           map.setCenter(marker.getPosition());
           infowindow.open(map, marker);
         });

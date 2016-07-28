@@ -27,6 +27,7 @@ gem 'nokogiri', '~> 1.6.7.2'
 gem "paperclip", "~> 5.0.0.beta1"
 gem 'aws-sdk', '>= 2.0.34'
 gem 'responders'
+gem 'react-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -44,6 +45,7 @@ group :development, :test do
   gem "pry", :require => "pry"
   gem 'launchy'
   gem 'teaspoon-mocha'
+  gem 'selenium-webdriver'
 end
 
 group :development do

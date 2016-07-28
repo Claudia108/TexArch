@@ -46,7 +46,7 @@ h4 {
 p {
   margin-top: 10px;
   line-height: 1.3;
-  width: 80%;
+  width: 90%;
 }
 
 table {
@@ -75,6 +75,12 @@ table th {
   height: auto;
   border: $main-border;
 }
+
+#preform {
+  margin: 0px 10px 15px 0px;
+  width: 100%;
+  height: auto;
+  border: $main-border;}
 
 .welcome-text {
   margin: 15px 0px 15px 0px;

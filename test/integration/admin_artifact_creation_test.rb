@@ -141,7 +141,7 @@ class AdminArtifactCreationTest < ActionDispatch::IntegrationTest
     admin = admin_login
     site = Site.first
     new_site = Site.last
-    new_image = "app/assets/images/Figure11.jpg"
+    new_image = "public/images/Figure11.jpg"
 
     assert_equal '/admin/dashboard', current_path
     assert page.has_content?("#{admin.first_name}, welcome to your dashboard")
@@ -182,7 +182,7 @@ class AdminArtifactCreationTest < ActionDispatch::IntegrationTest
     admin = admin_login
     site = Site.first
     new_site = Site.last
-    new_image = "app/assets/images/Figure11.jpg"
+    new_image = "public/images/Figure11.jpg"
 
     assert_equal '/admin/dashboard', current_path
     assert page.has_content?("#{admin.first_name}, welcome to your dashboard")

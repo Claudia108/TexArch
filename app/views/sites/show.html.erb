@@ -7,7 +7,6 @@
       <thead>
         <tr>
           <th colspan=2>Site Attributes</th>
-          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -35,24 +34,21 @@
           <td>Description</td>
           <td><%= @site.description %></td>
         </tr>
-
-        <% if admin_authenticated %>
-          <tr>
-            <td colspan=2>
-              <%= link_to "Edit Site", edit_admin_site_path(@site.id), class: "btn btn-primary" %>
-            </td>
-          </tr>
-        <% end %>
-
       </tbody>
     </table>
-    <%= link_to "See Map for Location", map_path, class: "btn btn-primary" %>
   </div>
+  <section class="col-md-5">
+    <% if admin_authenticated %>
+    <%= link_to "Edit Site", edit_admin_site_path(@site.id), class: "btn btn-primary" %>
+    <% end %>
 
-  <div class="image-fluid img-rounded col-md-6">
-      <%= image_tag @site.image.url(:medium),
-        alt: "Site Image",
-        class: "img-rounded site-image" %>
-  </div>
+    <%= link_to "See Map for Location", map_path, class: "btn btn-primary" %>
+
+    <div class="image-fluid img-rounded">
+        <%= image_tag @site.image.url(:medium),
+          alt: "Site Image",
+          class: "img-rounded site-image" %>
+    </div>
+  </section>
 
 </div>

@@ -49,14 +49,12 @@ class ActiveSupport::TestCase
     user.admin!
     visit '/'
     within(".navbar-right") do
-      click_link("Sign in with Google")
+      find("#sign-in").click
     end
+
     assert_equal '/admin/dashboard', current_path
     user
   end
-
-
-  # Add more helper methods to be used by all tests here...
 end
 
 class ActionDispatch::IntegrationTest
