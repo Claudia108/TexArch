@@ -30,3 +30,7 @@ The application introduces to the research, displays artifacts data and images a
   * Deployed app: https://texarch.herokuapp.com
   * git push heroku master
   * heroku run bundle exec rake db:migrate
+
+* Console error in Chrome: Failed to load chrome-extension
+  * This error is due to youtube and chrome. One can install extension or accept the error.
+  * [For more information:] (http://stackoverflow.com/questions/25814914/chrome-youtube-cast-sender-js-console-error)

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UserLoginTest < ActionDispatch::IntegrationTest
+class UserViewsSitesTest < ActionDispatch::IntegrationTest
   def setup
     Capybara.app = TexArch::Application
     stub_omniauth
