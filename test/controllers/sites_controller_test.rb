@@ -10,4 +10,9 @@ class SitesControllerTest < ActionController::TestCase
     assert sites.first.has_attribute?("name")
     assert sites.first.has_attribute?("longitude")
   end
+
+  test "should show site" do
+    get :show, id: Site.first.id
+    assert_response :success
+  end
 end

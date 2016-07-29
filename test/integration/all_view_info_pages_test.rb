@@ -8,6 +8,7 @@ class AllViewInfoPagesTest < ActionDispatch::IntegrationTest
   end
 
   test "visitor can view calf creek horizon info page" do
+    skip
     visit '/calf_creek_horizon'
     find("#learn-more").click
     assert_equal info_index_path, current_path
@@ -25,6 +26,7 @@ class AllViewInfoPagesTest < ActionDispatch::IntegrationTest
   end
 
   test "user can view calf creek horizon info page" do
+    skip
     login_user
 
     visit '/calf_creek_horizon'
@@ -64,6 +66,7 @@ class AllViewInfoPagesTest < ActionDispatch::IntegrationTest
   end
 
   test "visitor can view cch preforms info page" do
+    skip
     visit '/calf_creek_horizon'
 
     find("#preform").click
