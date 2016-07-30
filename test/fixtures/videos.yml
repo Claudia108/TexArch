@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Flint Knapping
+  link: https://www.youtube.com/watch?v=fxL3iAsbADw
+  description: Flint knapping in a scientific way
+
+two:
+  title: Galactic Archaeology
+  link: https://www.youtube.com/watch?v=rtymNOK7jr8
+  description: Interesting Topic

@@ -1,0 +1,29 @@
+
+<div class="row input-form">
+
+  <div class= "col-md-8">
+
+    <%= form_for @video, url: url do |f| %>
+
+      <fieldset class="form-group col-md-8">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control number", placeholder: "Title (duration in min)" %>
+      </fieldset>
+
+      <fieldset class="form-group col-md-8">
+        <%= f.label :description %>
+        <%= f.text_field :description, class: "form-control", placeholder: "A few words about the content ..." %>
+      </fieldset>
+
+      <fieldset class="form-group col-md-8">
+        <%= f.label :link %>
+        <%= f.text_field :link, class: "form-control", placeholder: "Only youtube links e.g. https://www.youtube.com/watch?v=fxL3iAsbADw " %>
+      </fieldset>
+
+      <fieldset class="form-group col-md-8">
+        <%= f.submit message, class: "btn btn-primary" %>
+      </fieldset>
+
+    <% end %>
+  </div>
+</div>
