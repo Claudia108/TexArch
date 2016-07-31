@@ -3,6 +3,10 @@ require 'test_helper'
 class Admin::VideosControllerTest < ActionController::TestCase
   setup do
     @video = videos(:one)
+    user = users(:one)
+    user.update_attributes(role: 1)
+    user
+    @controller.stubs(:current_user).returns(user)
   end
 
   test "should get new" do
@@ -30,7 +34,6 @@ class Admin::VideosControllerTest < ActionController::TestCase
                                 title: @video.title,
                                 description: @video.description,
                                 link: @video.link }
-    assert_response :success
     assert_redirected_to video_path(assigns(:video))
   end
 

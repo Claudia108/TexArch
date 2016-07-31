@@ -3,6 +3,10 @@ require 'test_helper'
 class Admin::SitesControllerTest < ActionController::TestCase
   setup do
     @site = sites(:one)
+    user = users(:one)
+    user.update_attributes(role: 1)
+    user
+    @controller.stubs(:current_user).returns(user)
   end
 
   test "should get new" do
@@ -19,7 +23,7 @@ class Admin::SitesControllerTest < ActionController::TestCase
                     site_type: "public_site"}
     end
     assert_equal 'no description available', assigns(:site).description
-    assert_equal 'no description available', assigns(:site).trinominal
+    assert_equal 'no trinominal available', assigns(:site).trinominal
     assert_redirected_to site_path(assigns(:site))
   end
 
@@ -34,7 +38,6 @@ class Admin::SitesControllerTest < ActionController::TestCase
                                 longitude: "-56.789",
                                 latitude: "54.678",
                                 site_type: @site.site_type }
-    assert_response :success
     assert_redirected_to site_path(assigns(:site))
   end
 end
