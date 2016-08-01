@@ -25,9 +25,4 @@ class ApplicationController < ActionController::Base
   def store_location
     session[:previous_url] = request.fullpath
   end
-
-
-  # def allow_youtube_iframe
-  #   response.headers['X-Frame-Options'] = 'ALLOW-FROM https://www.youtube.com'
-  # end
 end

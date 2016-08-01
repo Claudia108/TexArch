@@ -1,5 +1,4 @@
 class VideosController < ApplicationController
-  # after_action :allow_youtube_iframe
 
   def index
     @videos = Video.all
