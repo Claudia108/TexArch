@@ -1,5 +1,6 @@
 class Admin::VideosController < Admin::BaseController
-
+  after_action :allow_youtube_iframe
+  
   def new
     @video = Video.new
   end

@@ -13,6 +13,6 @@ class Video < ActiveRecord::Base
 
   def self.youtube_embed(url)
     formatted_link = transform_link(url)
-    %Q{<iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/#{ formatted_link }" frameborder="0" allowfullscreen></iframe>}
+    %Q{<iframe title="YouTube video player" width="640" height="390" src="https://www.youtube.com/embed/#{ formatted_link }" frameborder="0" allowfullscreen></iframe>}
   end
 end

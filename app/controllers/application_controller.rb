@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user,
                 :admin_authenticated,
-                :require_user
+                :require_user,
+                :allow_youtube_iframe
 
 
   def current_user
@@ -24,5 +25,10 @@ class ApplicationController < ActionController::Base
 
   def store_location
     session[:previous_url] = request.fullpath
+  end
+
+
+  def allow_youtube_iframe
+    response.headers['X-Frame-Options'] = 'ALLOW-FROM https://www.youtube.com'
   end
 end
