@@ -7,8 +7,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user,
                 :admin_authenticated,
-                :require_user,
-                :allow_youtube_iframe
+                :require_user
 
 
   def current_user
@@ -28,7 +27,7 @@ class ApplicationController < ActionController::Base
   end
 
 
-  def allow_youtube_iframe
-    response.headers['X-Frame-Options'] = 'ALLOW-FROM https://www.youtube.com'
-  end
+  # def allow_youtube_iframe
+  #   response.headers['X-Frame-Options'] = 'ALLOW-FROM https://www.youtube.com'
+  # end
 end
