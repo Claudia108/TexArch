@@ -26,7 +26,7 @@ class AdminVideoCreationTest < ActionDispatch::IntegrationTest
     assert page.has_content?("#{Video.last.title} Saved!")
     assert page.has_content?(Video.last.title)
     assert page.has_content?(Video.last.description)
-    assert page.has_css?("iframe[src*='http://www.youtube.com/embed/#{link}']")
+    assert page.has_css?("iframe[src*='https://www.youtube.com/embed/#{link}']")
   end
 
   test "returns error if title is missing" do
@@ -88,13 +88,13 @@ class AdminVideoCreationTest < ActionDispatch::IntegrationTest
     assert page.has_content?("#{Video.last.title} Saved!")
     assert page.has_content?(Video.last.title)
     assert_equal "", Video.last.description
-    assert page.has_css?("iframe[src*='http://www.youtube.com/embed/#{link}']")
+    assert page.has_css?("iframe[src*='https://www.youtube.com/embed/#{link}']")
   end
 
   test "updating a video" do
     video = Video.first
     new_title = "Galactic Archaeology"
-    new_link = "https://www.youtube.com/watch?v=rtymNOK7jr8"
+    new_link = "https://wwww.youtube.com/watch?v=rtymNOK7jr8"
     admin = admin_login
 
     assert_equal '/admin/dashboard', current_path
@@ -124,7 +124,7 @@ class AdminVideoCreationTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Video titled: '#{Video.last.title}' Updated!")
     assert page.has_content?(new_title)
     assert page.has_content?(Video.last.description)
-    assert page.has_css?("iframe[src*='http://www.youtube.com/embed/#{new_link_transformed}']")
+    assert page.has_css?("iframe[src*='https://www.youtube.com/embed/#{new_link_transformed}']")
   end
 
   test "returns error if updated video misses title or link" do
@@ -172,8 +172,6 @@ class AdminVideoCreationTest < ActionDispatch::IntegrationTest
     click_link(video.title)
 
     click_link("Delete Video")
-    # assert page.has_content?("Are you sure you want to delete this video?")
-    # click_button("Ok")
     assert_equal videos_path, current_path
     assert page.has_content?("Video titled: '#{video.title}' Deleted!")
     within(".list-group") do

@@ -14,6 +14,6 @@ class VideoTest < ActiveSupport::TestCase
     link = "https://www.youtube.com/watch?v=pqhBgCTPTwA"
     iframe = Video.youtube_embed(link)
 
-    assert_equal "<iframe title=\"YouTube video player\" width=\"640\" height=\"390\" src=\"http://www.youtube.com/embed/pqhBgCTPTwA\" frameborder=\"0\" allowfullscreen></iframe>", iframe
+    assert_equal "<iframe title=\"YouTube video player\" width=\"640\" height=\"390\" src=\"https://www.youtube.com/embed/pqhBgCTPTwA\" frameborder=\"0\" allowfullscreen></iframe>", iframe
   end
 end
