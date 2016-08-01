@@ -5,7 +5,7 @@ class Artifact < ActiveRecord::Base
       medium: ["600x600>", :jpg],
       thumb: ["300x300>", :jpg]
     },
-    default_url: "/images/landscape.jpg"
+    default_url: "/images/landscape_medium.jpg"
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 

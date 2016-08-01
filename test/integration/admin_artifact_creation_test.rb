@@ -3,6 +3,7 @@ require 'test_helper'
 class AdminArtifactCreationTest < ActionDispatch::IntegrationTest
   def setup
     Capybara.app = TexArch::Application
+    Paperclip::Attachment.any_instance.stubs(:save).returns(true)
   end
 
   test "creating an artifact" do

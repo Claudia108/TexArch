@@ -4,7 +4,7 @@ class Site < ActiveRecord::Base
       medium: ["600x600>", :jpg],
       thumb: ["300x300>", :jpg]
     },
-    default_url: "/images/landscape.jpg"
+    default_url: "/images/landscape_medium.jpg"
 
   enum site_type: %w(public_site private_site)
 

@@ -60,6 +60,9 @@ end
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
 
+  def setup
+    Paperclip::Attachment.any_instance.stubs(:save).returns(true)
+  end
 
   def teardown
     Capybara.reset_sessions!

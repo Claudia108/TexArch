@@ -23,10 +23,12 @@ Rails.application.routes.draw do
 
     resources :artifacts, only: [:new, :create, :edit, :update, :destroy]
     resources :sites, only: [:new, :create, :edit, :update]
+    resources :videos, only: [:new, :create, :edit, :update, :destroy]
   end
 
   resources :artifacts, only: [:show]
   resources :sites, only: [:show, :index]
+  resources :videos, only: [:index, :show]
   get '/:point_type', to: 'artifacts#index', as: :points
 
 end

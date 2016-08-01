@@ -62,6 +62,8 @@ group :test do
   gem 'simplecov', :require => false
   gem 'mocha'
   gem 'database_cleaner'
+  gem 'shoulda', '~> 3.5'
+  gem 'shoulda-matchers', '~> 2.0'
 end
 
 group :production do

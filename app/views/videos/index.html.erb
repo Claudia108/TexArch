@@ -1,0 +1,15 @@
+<h2> Watch a Video</h2>
+
+<div class="list-group">
+  <% if admin_authenticated %>
+    <p><%= link_to "Add a new Video", new_admin_video_path,
+        class: "list-group-item active" %></p>
+  <% end %>
+
+  <% cache cache_key_for(Video, "list") do %>
+    <% @videos.each do |video| %>
+        <p><%= link_to video.title, video_path(video),
+            class: "list-group-item" %></p>
+    <% end %>
+  <% end %>
+</div>
