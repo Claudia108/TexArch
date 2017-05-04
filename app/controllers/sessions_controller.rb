@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
     end
     if current_user.admin?
-      redirect_to admin_dashboard_path
+      redirect_to after_sign_in_path
     else
       redirect_to after_sign_in_path
     end
