@@ -9,7 +9,7 @@ class AllViewInfoPagesTest < ActionDispatch::IntegrationTest
 
   test "visitor can view calf creek horizon info page" do
     visit '/calf_creek_horizon'
-    find("#learn-more").click
+    find(".learn-more").click
     assert_equal info_index_path, current_path
 
     within("h2") do
@@ -28,7 +28,7 @@ class AllViewInfoPagesTest < ActionDispatch::IntegrationTest
     login_user
 
     visit '/calf_creek_horizon'
-    find("#learn-more").click
+    find(".learn-more").click
     assert_equal info_index_path, current_path
 
     within("h2") do
@@ -48,7 +48,7 @@ class AllViewInfoPagesTest < ActionDispatch::IntegrationTest
     admin_login
 
     visit '/calf_creek_horizon'
-    find("#learn-more").click
+    find(".learn-more").click
     assert_equal info_index_path, current_path
 
     within("h2") do

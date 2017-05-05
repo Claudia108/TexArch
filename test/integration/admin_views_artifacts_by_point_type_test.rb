@@ -11,7 +11,7 @@ class AdminViewsArtifactsByPointTypeTest < ActionDispatch::IntegrationTest
     andice = Artifact.where(point_type: "Andice")
 
     visit '/calf_creek_horizon'
-    within("#artifact-links") do
+    within(".artifact-nav") do
       click_link("Andice Points")
     end
     within("#table-#{andice.first.id}") do
@@ -28,7 +28,7 @@ class AdminViewsArtifactsByPointTypeTest < ActionDispatch::IntegrationTest
     bell = Artifact.where(point_type: "Bell")
 
     visit '/calf_creek_horizon'
-    within("#artifact-links") do
+    within(".artifact-nav") do
       click_link("Bell Points")
     end
 
@@ -47,7 +47,7 @@ class AdminViewsArtifactsByPointTypeTest < ActionDispatch::IntegrationTest
     calf_creek = Artifact.where(point_type: "Calf Creek")
 
     visit '/calf_creek_horizon'
-    within("#artifact-links") do
+    within(".artifact-nav") do
       click_link("Calf Creek Points")
     end
 

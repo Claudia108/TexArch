@@ -12,7 +12,7 @@ class CalfCreek extends React.Component {
           with the CCH and have been found in Arkansas, Kansas, Missouri,
           Oklahoma and Texas, and there is limited evidence in Colorado,
           New Mexico, northern Tamaulipas, and Utah.
-        <a href="/info" id="learn-more">  Learn more...</a></p>
+        <a href="/info" className="learn-more">  Learn more...</a></p>
         <img src="/images/Figure14.jpg" className="welcome-image img-rounded" alt="Projectile Points"/>
       </article>
     )
