@@ -22,15 +22,12 @@ var resetMap = function(map) {
 };
 
 var initMap = function(response) {
-  function initialize() {
-    var map = new google.maps.Map(document.getElementById('map'), {
+  if($("#map").length != 0) {
+    var map = new google.maps.Map(document.getElementById("map"), {
       zoom: zoom,
       center: centerPoint,
       mapTypeId: google.maps.MapTypeId.TERRAIN
     });
-    google.maps.event.addDomListener(window, "load", initialize);
-
-
 
     var setMarkers = function(response) {
       if (typeof response !== "undefined") {
@@ -68,7 +65,6 @@ var initMap = function(response) {
             }
           });
 
-
           marker.addListener('click', function() {
             map.setZoom(11);
             map.setCenter(marker.getPosition());
@@ -83,5 +79,4 @@ var initMap = function(response) {
     };
     setMarkers(response);
   }
-  google.maps.event.addDomListener(window, "load", initialize);
 };
